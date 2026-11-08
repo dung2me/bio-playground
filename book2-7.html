@@ -601,30 +601,32 @@ const K7A = {
   cheer(a, up, t) { a.userData.armR.rotation.z = up ? 2.4 + .2 * Math.sin(t * 8) : .25; a.userData.armL.rotation.z = up ? -2.4 - .2 * Math.sin(t * 8) : -.25; },
 };
 
-// 1. 글자 블록 (염기)
+// 1. 글자 블록 (염기) — 보리 블록 → (바뀌는 장면) → 몸속 블록. 5장면
 LESSONS[0] = {
   scene: 'k7_blocks', law: '네 가지 글자 블록', title: '보리의 네 가지 블록',
-  cam: [-.3, 2.6, 7.4], tgt: [-.3, 1.0, 0], fit: 1.05, T: 16.5,
+  cam: [-.3, 2.6, 7.4], tgt: [-.3, 1.0, 0], fit: 1.05, T: 19,
   story: '1권에서 DNA는 꼬인 사다리였지요? 오늘은 아기 곰 보리가 블록 놀이를 해요.',
   watch: [
     ['보리의 블록은 딱 네 가지예요. 순서만 바꾸면 집도 되고 배도 돼요!', 13],
-    ['모양 맞추기 놀이! 세모는 세모 구멍에, 동그라미는 동그라미 구멍에만 쏙!', 10, '🔍 「세모 쏙」을 누르면 톡! 튕기고 쏙! 들어가는 게 천천히 되풀이돼요.'],
-    ['몸속 DNA도 이 네 가지 블록으로 쓰여 있어요. 짝꿍 모양끼리만 쏙!', 12, '🔍 「첫 짝꿍」을 누르면 톡! 하고 쏙! 하는 순간을 크게 봐요.'],
+    ['모양 맞추기! 빨간 세모는 노란 세모 구멍에, 초록 동그라미는 파란 동그라미 구멍에만 쏙!', 10, '🔍 「세모 쏙」을 누르면 톡! 튕기고 쏙! 들어가는 게 천천히 되풀이돼요.'],
+    ['보리 블록을 아주 크게 보면… 몸속 블록으로 바뀌어요! 색도 모양도 똑같아요.', 10, '🔍 「바뀌는 순간」을 누르면 보리 블록이 몸속 블록으로 바뀌는 게 천천히 되풀이돼요.'],
+    ['몸속 블록도 순서를 바꾸면 다른 말이 돼요. 집 만드는 법이 배 만드는 법으로!', 11, '🔍 「순서 바꾸기」를 누르면 블록이 자리를 바꾸는 게 천천히 되풀이돼요.'],
+    ['몸속에서도 짝꿍 모양끼리만 쏙! 빨간 세모는 노란 세모 구멍에 쏙!', 12, '🔍 「첫 짝꿍」을 누르면 톡! 하고 쏙! 하는 순간을 크게 봐요.'],
   ],
-  q: '보리의 블록은 몇 가지였나요?',
-  choices: [['4️⃣', '딱 네 가지!'], ['🔟', '열 가지도 넘어!'], ['1️⃣', '딱 한 가지만!']], answer: 0,
-  hint: '빨강, 노랑, 초록, 파랑 블록을 세어 봐요.',
-  q2: '세모 블록은 어디에 쏙 들어갈까요?',
-  choices2: [['🔺', '세모 구멍에 쏙!'], ['⭕', '동그라미 구멍에 쏙!'], ['🟦', '아무 구멍에나 쏙!']], answer2: 0,
-  hint2: '모양이 같은 구멍에만 들어가요. 몸속 블록도 짝꿍 모양끼리만 맞아요.',
-  kid: '세모는 세모 구멍에 쏙!',
-  name: { kid: '글자 블록', term: '염기', what: 'DNA는 네 가지 블록으로 쓰여 있어요. 짝꿍 모양끼리만 쏙 맞아요!' },
+  q: '보리 블록 순서를 바꾸니 무엇이 됐나요?',
+  choices: [['⛵', '집이 배가 됐어요!'], ['💨', '블록이 다 사라졌어요!'], ['🎨', '블록 색이 다 바뀌었어요!']], answer: 0,
+  hint: '같은 블록인데 자리만 바꿨더니 집이 다른 것이 됐어요.',
+  q2: '몸속 빨간 세모 블록의 짝꿍은 누구예요?',
+  choices2: [['🔺', '노란 세모 구멍!'], ['🔵', '파란 동그라미 구멍!'], ['🟢', '초록 동그라미 블록!']], answer2: 0,
+  hint2: '보리 블록이랑 똑같아요. 세모는 세모 구멍에만 쏙 들어가요.',
+  kid: '빨간 세모는 노란 세모 구멍에 쏙!',
+  name: { kid: '글자 블록', term: '염기', what: 'DNA는 네 가지 블록으로 쓰여 있어요. 순서가 바뀌면 다른 말이 되고, 짝꿍 모양끼리만 쏙 맞아요!' },
   habit: '블록 놀이가 끝나면 같은 모양끼리 모아서 정리해요.',
-  adult: '어른용 · 염기(base): DNA의 네 염기 A(아데닌)·T(티민)·G(구아닌)·C(사이토신). 상보적 염기쌍은 A–T(수소 결합 2개), G–C(3개)뿐이다. 이 책의 그림은 A ▼ ↔ T ▽, G ● ↔ C ○ 모양 맞추기로 상보성을 보여 준다. 네 염기의 순서(염기 서열)가 유전 정보다.',
+  adult: '어른용 · 염기(base): DNA의 네 염기 A(아데닌)·T(티민)·G(구아닌)·C(사이토신). 상보적 염기쌍은 A–T(수소 결합 2개), G–C(3개)뿐이다. 그림: 빨강 ▼ A ↔ 노랑 ▽ T, 초록 ● G ↔ 파랑 ○ C (보리 블록과 몸속 블록의 색·모양을 똑같이 맞춤). 네 염기의 순서(염기 서열)가 유전 정보이고, 순서가 바뀌면 다른 단백질을 만드는 정보가 된다.',
 };
 
 SCENES.k7_blocks = (g) => {
-  const S = new THREE.Group(), Bd = new THREE.Group(); g.add(S, Bd);
+  const S = new THREE.Group(), Bd = new THREE.Group(), M = new THREE.Group(), R = new THREE.Group(); g.add(S, Bd, M, R);
   S.add(floor(11, 4.6, '#fde7c4'));
   const bori = animal('bear', '#c68642', 1.1); S.add(bori);
 
@@ -648,21 +650,69 @@ SCENES.k7_blocks = (g) => {
   const pA = K7A.shape('A', .22, BASE.A, .26), pG = K7A.shape('G', .24, BASE.G, .26);
   P2.add(holeT, holeC, ringT, ringC, pA, pG);
 
-  // ③ 몸속
+  // ③ 바뀌는 장면 (다리): 바닥 위 보리 블록 4개 → 같은 자리에서 몸속 블록 4개로
+  const mFloor = floor(11, 4.6, '#fde7c4'); M.add(mFloor);
+  const mBori = animal('bear', '#c68642', 1.1); mBori.position.set(-2.6, 0, .5); mBori.rotation.y = .6; M.add(mBori);
+  const mCell = K7A.cell(3.4); mCell.position.set(0, .8, 0); M.add(mCell);
+  const MS = 'ATGC', mX = i => -.96 + i * .64;
+  const mBlocks = [...MS].map((b, i) => { const k = K7A.block(b, .55); k.position.set(-1.65 + i * 1.1, .28, 0); M.add(k); return k; });
+  const mCars = [...MS].map((b, i) => { const c = toyCar(b, { s: 1.25, face: true }); c.position.set(-1.65 + i * 1.1, .55, 0); M.add(c); return c; });
+  const lEq1 = label('보리 블록', .4, '#fde047'), lEq2 = label('몸속 블록', .4, '#fde047'), lSame = label('색도 모양도 똑같아요!', .42, '#fde047');
+  lEq1.position.set(0, 1.6, 0); lEq2.position.set(0, 2.2, 0); lSame.position.set(0, 2.2, 0); M.add(lEq1, lEq2, lSame);
+  const mPop = K7A.pop(); M.add(mPop);
+  function bridge(t) {
+    const fade = seg(t, 1.8, 3.6), nm = K7A.naming();
+    setOpacity(mFloor, 1 - fade); mFloor.visible = fade < .99;
+    setOpacity(mBori, 1 - fade); mBori.visible = fade < .99; waddle(mBori, t, .2);
+    mCell.visible = fade > .01; mCell.scale.setScalar(.4 + .6 * fade); mCell.material.opacity = .45 * fade;
+    let lastI = -1, lastT = -9;
+    mBlocks.forEach((b, i) => {
+      const a = 3.6 + i * .55, k = seg(t, a, a + .5);  // 블록이 줄어들며 사라지고, 같은 자리에 몸속 블록이 나타나요
+      setOpacity(b, 1 - k); b.visible = k < .99; b.scale.setScalar(1 - .35 * k);
+      const c = mCars[i]; setOpacity(c, k); c.visible = k > .01;
+      const j = seg(t, 6.4, 7.6), x0 = -1.65 + i * 1.1;
+      b.position.set(x0, .28 + .27 * k, 0);
+      c.position.set(lerp(x0, mX(i) * 1.25, j), .55 + .45 * j, 0); c.scale.setScalar(.75 + .25 * k);
+      if (t >= a + .5) { lastI = i; lastT = a + .5; }
+    });
+    K7A.popAt(mPop, (t - lastT) / .5, lastI >= 0 ? mCars[lastI].position.clone().add(V(0, .1, .3)) : null);
+    lEq1.visible = t < 3.4 && !nm; lEq2.visible = t > 4.6 && t < 7 && !nm; lSame.visible = t > 7.2 && !nm;
+  }
+
+  // ④ 몸속: 순서를 바꾸면 다른 말 (집 만드는 법 → 배 만드는 법)
+  const rCell = K7A.cell(3.4); rCell.position.set(0, .8, 0); R.add(rCell);
+  const RS = 'ATGCGA', rs = 1.2, rX = i => (i - 2.5) * TOY_GAP * rs;
+  const ORD = [5, 2, 0, 4, 1, 3]; // 새 자리
+  const rCars = [...RS].map(b => { const c = toyCar(b, { s: rs }); R.add(c); return c; });
+  const iconH = new THREE.Group(); iconH.add(box(.5, .38, .4, '#fbbf24', 0, 0, 0)); const rf = mesh(new THREE.ConeGeometry(.42, .34, 4), '#b45309', 0, .36, 0); rf.rotation.y = Math.PI / 4; iconH.add(rf);
+  const iconB = new THREE.Group(); const hull = box(.7, .18, .3, '#92400e', 0, 0, 0); iconB.add(hull); const sl = mesh(new THREE.ConeGeometry(.22, .45, 3), '#fff7ed', .02, .32, 0); iconB.add(sl);
+  iconH.position.set(-1.9, 2.25, 0); iconB.position.set(-1.9, 2.25, 0); R.add(iconH, iconB);
+  const lHow1 = label('집 만드는 법', .42, '#fde047'), lHow2 = label('배 만드는 법', .42, '#fde047');
+  lHow1.position.set(.5, 2.25, 0); lHow2.position.set(.5, 2.25, 0); R.add(lHow1, lHow2);
+  function reorder(t) {
+    const k = seg(t, 3.5, 6.5), nm = K7A.naming();
+    rCars.forEach((c, i) => {
+      const d = i * .12, kk = seg(t, 3.5 + d, 5.8 + d);
+      c.position.copy(K7A.arc(V(rX(i), .9, 0), V(rX(ORD[i]), .9, 0), kk, .9 + .25 * (i % 2)));
+    });
+    iconH.visible = k < .5; iconB.visible = k >= .5; const sc = 1 + .15 * Math.sin(t * 5); iconH.scale.setScalar(sc); iconB.scale.setScalar(sc);
+    lHow1.visible = k < .5 && !nm; lHow2.visible = k >= .5 && !nm;
+  }
+
+  // ⑤ 몸속 짝꿍
   const cell = K7A.cell(3.4); cell.position.set(0, .8, 0); Bd.add(cell);
   const s = 1.25, seq = 'AGTCG', top = toyStrand(seq, { y: .95, s, face: true }); Bd.add(top.group);
   const yF = .95 - .745 * s, yB = -1.9;
   const bot = [...seq].map((b, i) => { const c = toyCar(PAIR[b], { s }); c.rotation.z = Math.PI; c.position.x = top.x(i); Bd.add(c); return c; });
-  const wrong = toyCar('G', { s }); wrong.rotation.z = Math.PI; Bd.add(wrong); // 꽉 찬 동그라미: 세모와 부딪혀 톡!
+  const wrong = toyCar('G', { s }); wrong.rotation.z = Math.PI; Bd.add(wrong);
   const meetP = i => V(top.x(i), .95 - .36 * s, 0);
 
   const lFour = label('블록은 딱 네 가지!', .42, '#fde047'); lFour.position.set(.5, 2.6, 0);
   const lHouse = label('집!', .6, '#fde047'); lHouse.position.set(.7, 2.75, 0);
   const lBoat = label('배!', .6, '#fde047'); lBoat.position.set(.7, 2.75, 0);
   const lTok = label('톡! 안 맞아요', .42, '#fecaca'), lSsok = label('쏙!', .55, '#fde047');
-  const lBody = label('몸속에서도 똑같아요!', .42, '#fde047'); lBody.position.set(0, 2.7, 0);
   const lPair = label('짝꿍끼리 쏙!', .46, '#fde047'); lPair.position.set(0, 2.6, 0);
-  const labels = [lFour, lHouse, lBoat, lTok, lSsok, lBody, lPair];
+  const labels = [lFour, lHouse, lBoat, lTok, lSsok, lPair];
   const pop = K7A.pop(); g.add(pop, ...labels);
 
   function build(t) {
@@ -701,7 +751,6 @@ SCENES.k7_blocks = (g) => {
   const arrT = i => i === 0 ? 3.9 : 5 + (i - 1) * 1.0;
   function body(t) {
     cell.scale.setScalar(.3 + .7 * seg(t, 0, .8));
-    lBody.visible = t < 2.4;
     let wy = yB;
     if (t > 2.3 && t < 3.1) wy = lerp(yB, yF - .3, seg(t, 2.3, 3.0));
     else if (t >= 3.1) wy = lerp(yF - .3, yB, seg(t, 3.1, 3.8));
@@ -713,29 +762,40 @@ SCENES.k7_blocks = (g) => {
     lSsok.visible = last >= 0 && t - lastT < .8 && t < 9.3; if (last >= 0) lSsok.position.copy(meetP(last)).add(V(0, -1.6, .3));
     lPair.visible = t > 9.3;
   }
-
+  const BR = 8; // ph0: 앞 8초 = 바뀌는 장면, 뒤 = 몸속 짝꿍
   const draw = (t, ph) => {
-    const story = ph === 1 || ph === 2 || (ph === 0 && t < 7.6);
-    S.visible = story; Bd.visible = !story; P1.visible = ph === 1; P2.visible = story && ph !== 1;
+    const which = ph === 0 ? (t < BR ? 'M' : 'B') : ph <= 2 ? 'S' : ph === 3 ? 'M' : ph === 4 ? 'R' : 'B';
+    S.visible = which === 'S'; M.visible = which === 'M'; R.visible = which === 'R'; Bd.visible = which === 'B';
+    P1.visible = ph === 1; P2.visible = ph === 2;
     labels.forEach(l => l.visible = false); pop.visible = false;
-    if (ph === 1) { bori.position.set(-2.8, 0, .6); bori.rotation.y = .5; build(t); K7A.cheer(bori, (t > 5.4 && t < 8) || t > 10.6, t); }
-    else if (story) { bori.position.set(-2.0, 0, .5); bori.rotation.y = .7; sorter(t); K7A.cheer(bori, t > 7.4, t); }
-    else body(ph === 0 ? (t - 7.6) * 1.15 : t);
-    waddle(bori, t, .25);
+    if (ph === 1) { bori.position.set(-2.8, 0, .6); bori.rotation.y = .5; build(t); K7A.cheer(bori, (t > 5.4 && t < 8) || t > 10.6, t); waddle(bori, t, .25); }
+    else if (ph === 2) { bori.position.set(-2.0, 0, .5); bori.rotation.y = .7; sorter(t); K7A.cheer(bori, t > 7.4, t); waddle(bori, t, .25); }
+    else if (which === 'M') bridge(ph === 0 ? t * 1.1 : t);
+    else if (which === 'R') reorder(t);
+    else body(ph === 0 ? (t - BR) * 1.15 : t);
     if (K7A.naming()) labels.forEach(l => l.visible = false);
   };
   const mp = i => () => g.localToWorld(meetP(i).add(V(0, -.3, 0)));
+  const morphS = ['🔍 바뀌는 순간', [-.2, .6, 0], 3.6, '보리 블록이 몸속 블록으로 바뀌어요. 색도 모양도 똑같아요!', null, { loop: [3.3, 6.4], slow: .5 }];
   draw.spots = {
     1: [['🔍 집 짓기', [.7, .9, 0], 3.8, '똑같은 블록으로 집을 지어요', null, { loop: [2.9, 6.6], slow: .5 }],
         ['🔍 배 만들기', [.7, .9, 0], 3.8, '순서를 바꾸니 배가 됐어요', null, { loop: [8.1, 11.4], slow: .5 }]],
     2: [['🔍 세모 쏙', [.9, .85, .4], 2.6, '동그라미 구멍엔 톡! 세모 구멍엔 쏙!', null, { loop: [1.3, 5.6], slow: .5 }],
         ['🔍 동그라미 쏙', [1.45, .8, .4], 2.0, '동그라미는 동그라미 구멍에 쏙!', null, { loop: [5.5, 7.8], slow: .5 }]],
-    3: [['🔍 첫 짝꿍', mp(0), 3.0, '동그라미는 톡! 세모 구멍에 세모가 쏙!', null, { loop: [2.2, 5.0], slow: .5 }],
+    3: [morphS],
+    4: [['🔍 순서 바꾸기', [0, 1.2, 0], 4.6, '같은 블록인데 자리만 바꾸면 다른 말!', null, { loop: [3.2, 7.2], slow: .5 }]],
+    5: [['🔍 첫 짝꿍', mp(0), 3.0, '동그라미는 톡! 세모 구멍에 세모가 쏙!', null, { loop: [2.2, 5.0], slow: .5 }],
         ['🔍 동그라미 짝꿍', mp(1), 2.8, '초록 동그라미는 파란 동그라미 구멍에 쏙!', null, { loop: [4.9, 6.2], slow: .5 }]],
-    0: [['🔍 세모 쏙', [.9, .85, .4], 2.6, '동그라미 구멍엔 톡! 세모 구멍엔 쏙!', null, { loop: [1.3, 5.6], slow: .5 }],
-        ['🔍 몸속 짝꿍', mp(0), 3.0, '몸속 블록도 짝꿍 모양끼리 쏙!', null, { loop: [9.5, 12.0], slow: .5 }]],
+    0: [['🔍 바뀌는 순간', [-.2, .6, 0], 3.6, morphS[3], null, { loop: [3.0, 6.0], slow: .5 }],
+        ['🔍 몸속 짝꿍', mp(0), 3.0, '몸속 블록도 짝꿍 모양끼리 쏙!', null, { loop: [9.8, 12.8], slow: .5 }]],
   };
-  draw.cam = { 2: [[1.2, 0], [5.4, 1], [8.0, -1]], 3: [[2.2, 0], [4.9, 1], [6.4, -1]], 0: [[1.2, 0], [5.6, -1], [9.4, 1], [14.5, -1]] };
+  draw.cam = {
+    2: [[1.2, 0], [5.4, 1], [8.0, -1]],
+    3: [[3.0, 0], [7.4, -1]],
+    4: [[3.3, 0], [7.6, -1]],
+    5: [[2.2, 0], [4.9, 1], [6.4, -1]],
+    0: [[2.8, 0], [6.8, -1], [10.0, 1], [15.5, -1]],
+  };
   return draw;
 };
 
@@ -1006,59 +1066,105 @@ LESSONS[3] = {
   story: '지난번엔 두 줄이 마주 봐야 쏙 맞았지요? 오늘은 놀이터 미끄럼틀 앞에서 줄을 서요.',
   watch: [
     ['미끄럼틀 줄에 바둑이가 왔어요. 앞에 끼려다가 "맨 뒤에 서요!" 듣고 맨 뒤로 가요.', 12],
-    ['새 친구가 서는 곳을 크게 봐요. 앞에는 안 되고, 맨 뒤에만 쏙!', 12, '🔍 「맨 뒤에 쏙」을 누르면 줄 끝에 서는 순간이 천천히 되풀이돼요'],
-    ['몸속에서도 똑같아요! 새 블록은 기차 꼬리 고리에만 찰칵 붙어요.', 12.5, '🔍 「꼬리에 찰칵」을 누르면 붙는 순간이 천천히 되풀이돼요'],
+    ['새 친구가 서는 곳을 크게 봐요. 앞에는 안 되고, 주황 화살표가 있는 맨 뒤에만 쏙!', 12, '🔍 「맨 뒤에 쏙」을 누르면 줄 끝에 서는 순간이 천천히 되풀이돼요'],
+    ['친구들 줄이 블록 기차로 바뀌어요! 맨 앞은 파란 머리, 맨 뒤는 주황 꼬리. 나비도 꼬리에 찰칵!', 12, '🔍 「바뀌는 순간」을 누르면 친구들이 기차 칸으로 바뀌는 게 천천히 되풀이돼요'],
+    ['몸속에서도 똑같아요! 새 블록은 기차 주황 꼬리 고리에만 찰칵 붙어요.', 12.5, '🔍 「꼬리에 찰칵」을 누르면 붙는 순간이 천천히 되풀이돼요'],
   ],
   q: '바둑이는 줄 어디에 섰나요?',
   choices: [['🔚', '맨 뒤에 섰어요!'], ['🔝', '맨 앞에 끼었어요!'], ['🐻', '보리 옆에 붙었어요!']], answer: 0,
-  hint: '바둑이가 앞에 끼려다가 무슨 말을 들었지요?',
-  q2: '몸속 새 블록은 어디에 붙나요?',
-  choices2: [['🧡', '꼬리 고리에 찰칵!'], ['🔵', '파란 머리 쪽에 찰칵!'], ['🎲', '아무 데나 막 붙어요!']], answer2: 0,
-  hint2: '새 블록은 주황색 꼬리 고리에만 걸려요. 머리 쪽은 톡 튕겨요.',
-  kid: '꼬리 고리에 찰칵!',
-  name: { kid: '꼬리에만 붙이기', term: '5′→3′ 합성', what: '새 블록은 기차 꼬리에만 붙어요. 그래서 새 기차는 한쪽으로만 길어져요.' },
+  hint: '바둑이가 앞에 끼려다가 무슨 말을 들었지요? 주황 화살표가 어디 있었나요?',
+  q2: '새 블록은 기차 어디에 찰칵 붙나요?',
+  choices2: [['🧡', '주황 꼬리 고리에!'], ['🔵', '파란 머리 자석 쪽에!'], ['🎲', '아무 데나 막 붙어요!']], answer2: 0,
+  hint2: '줄 맨 뒤 주황 화살표가 주황 꼬리 고리로 바뀌었지요? 새 블록은 거기에만 찰칵!',
+  kid: '주황 꼬리 고리에 찰칵!',
+  name: { kid: '꼬리에만 붙이기', term: '5′→3′ 합성', what: '새 블록은 기차 꼬리에만 붙어요. 줄 맨 뒤에 서는 것처럼! 그래서 새 기차는 한쪽으로만 길어져요.' },
   habit: '줄을 설 때는 맨 뒤에 서요. 새치기는 안 돼요!',
-  adult: '어른용 · 5′→3′ 합성: DNA 중합효소는 자라는 가닥의 3′-OH 끝에만 새 뉴클레오타이드를 붙인다(5′ 인산과 인산다이에스터 결합). 그래서 새 가닥은 늘 5′→3′ 방향으로만 자라고, 주형 가닥과는 반대 방향(역평행)이다. 비유: 줄 맨 뒤에만 서기 = 3′ 끝에만 붙이기, 주황 고리 = 3′ 끝, 파란 자석 = 5′ 끝.',
+  adult: '어른용 · 5′→3′ 합성: DNA 중합효소는 자라는 가닥의 3′-OH 끝에만 새 뉴클레오타이드를 붙인다(5′ 인산과 인산다이에스터 결합). 그래서 새 가닥은 늘 5′→3′ 방향으로만 자라고, 주형 가닥과는 반대 방향(역평행)이다. 비유: 줄 맨 뒤 주황 화살표 = 3′ 끝(주황 고리), 줄 맨 앞(미끄럼틀 쪽) 파란 표시 = 5′ 끝(파란 자석).',
 };
 
 SCENES.k7_tailOnly = (g) => {
-  const S = new THREE.Group(), B = new THREE.Group(); g.add(S, B);
+  const S = new THREE.Group(), M = new THREE.Group(), B = new THREE.Group(); g.add(S, M, B);
+  const ORANGE = '#f97316', BLUE = '#3b82f6';
 
-  // ── 놀이터: 미끄럼틀 줄 ──
+  // ── 놀이터: 미끄럼틀 줄 (미끄럼틀이 왼쪽 = 줄 맨 앞, 오른쪽 = 맨 뒤 · 몸속 기차와 같은 방향) ──
   S.add(floor(8.4, 4.0, '#d9f99d'));
-  for (const z of [-.38, .38]) S.add(box(.1, 1.55, .1, '#64748b', 1.75, .78, z));
-  for (let k = 0; k < 4; k++) S.add(box(.08, .06, .76, '#94a3b8', 1.75, .3 + k * .36, 0));
-  S.add(box(.5, .08, .8, '#38bdf8', 2.0, 1.55, 0));
-  const chute = box(1.75, .08, .72, '#f97316', 2.75, .85, 0); chute.rotation.z = -.82; S.add(chute);
+  for (const z of [-.38, .38]) S.add(box(.1, 1.55, .1, '#64748b', -1.75, .78, z));
+  for (let k = 0; k < 4; k++) S.add(box(.08, .06, .76, '#94a3b8', -1.75, .3 + k * .36, 0));
+  S.add(box(.5, .08, .8, '#38bdf8', -2.0, 1.55, 0));
+  const chute = box(1.75, .08, .72, ORANGE, -2.75, .85, 0); chute.rotation.z = .82; S.add(chute);
+  const frontMark = cyl(.28, .28, .04, BLUE, -1.0, .03, .75); S.add(frontMark); // 줄 맨 앞 파란 표시
   const P = {
     bori: animal('bear', '#c68642', .95), duri: animal('rabbit', '#f5f5f4', .95), ggul: animal('pig', '#f9a8d4', .95),
     bad: animal('dog', '#e7c08a', .95), nabi: animal('cat', '#fbbf24', .95),
   };
   Object.values(P).forEach(a => S.add(a));
-  const LINE = [[P.bori, 1.0], [P.duri, 0], [P.ggul, -1.0]];
-  const BADP = [[0, 3.6, 1.7], [1.0, 3.6, 1.7], [2.6, 1.55, .85], [4.2, 1.55, .85], [5.0, 1.1, 1.35], [7.0, -1.9, 1.35], [7.6, -2.0, 0]];
-  const NABIP = [[0, -4.4, 0], [8.4, -4.4, 0], [10.4, -3.0, 0]];
-  const say1 = label('맨 뒤에 서요!', .42, '#fde047'); say1.position.set(1.0, 2.0, 0);
+  const LINE = [[P.bori, -1.0], [P.duri, 0], [P.ggul, 1.0]];
+  const BADP = [[0, -3.6, 1.7], [1.0, -3.6, 1.7], [2.6, -1.55, .85], [4.2, -1.55, .85], [5.0, -1.1, 1.35], [7.0, 1.9, 1.35], [7.6, 2.0, 0]];
+  const NABIP = [[0, 4.4, 0], [8.4, 4.4, 0], [10.4, 3.0, 0]];
+  const say1 = label('맨 뒤에 서요!', .42, '#fde047'); say1.position.set(-1.0, 2.0, 0);
   const say2 = label('맨 뒤에 쏙!', .44, '#fde047');
-  const here = arrow(.7, '#f97316'); here.position.set(-2.0, 2.35, 0);
+  const here = arrow(.7, ORANGE); here.position.set(2.0, 2.35, 0);
   S.add(say1, say2, here);
-
+  const FACE = -Math.PI / 2;
   const story = (t, ph) => {
     const nm = K7B.naming();
     LINE.forEach(([a, x], i) => {
-      a.position.set(x, 0, 0); a.rotation.y = Math.PI / 2; waddle(a, t + i, .12);
-      a.userData.head.rotation.y = 0; a.userData.armL.rotation.z = 0;
+      a.position.set(x, 0, 0); a.rotation.y = FACE; waddle(a, t + i, .12);
+      a.userData.head.rotation.y = 0; a.userData.armR.rotation.z = 0;
     });
-    K7B.place(P.bad, t, BADP, Math.PI / 2);
+    K7B.place(P.bad, t, BADP, FACE);
     if (t > 7.6 && t < 8.1) P.bad.position.y = .3 * Math.sin((t - 7.6) / .5 * Math.PI);
     const scold = t > 2.6 && t < 4.3;
     P.bad.userData.head.rotation.y = scold ? .45 * Math.sin((t - 2.6) * 11) : 0;
-    if (scold) { P.bori.userData.head.rotation.y = -.8; P.bori.userData.armL.rotation.z = -2.3; }
-    P.nabi.visible = t > 8.3; K7B.place(P.nabi, t, NABIP, Math.PI / 2);
+    if (scold) { P.bori.userData.head.rotation.y = .8; P.bori.userData.armR.rotation.z = 2.3; }
+    P.nabi.visible = t > 8.3; K7B.place(P.nabi, t, NABIP, FACE);
     say1.visible = scold && !nm;
     const lift = ph !== 1;
-    say2.visible = t > 7.6 && t < 10.8 && !nm; say2.position.set(-2.0, lift ? 2.95 : 2.0, 0);
-    here.visible = lift && t > 4.6 && t < 10.8 && !nm; here.scale.setScalar(pulse(t));
+    say2.visible = t > 7.6 && t < 10.8 && !nm; say2.position.set(2.0, lift ? 2.95 : 2.0, 0);
+    here.visible = t > 4.6 && t < 11.5 && !nm; here.scale.setScalar(pulse(t));
+    frontMark.scale.setScalar(1 + .1 * Math.sin(t * 4));
+  };
+
+  // ── 다리: 친구들 줄 → 블록 기차 (같은 방향, 주황 화살표 = 주황 꼬리 고리) ──
+  M.add(floor(8.4, 4.0, '#d9f99d'));
+  const mFloor = M.children[0];
+  const mA = [animal('bear', '#c68642', .95), animal('rabbit', '#f5f5f4', .95), animal('pig', '#f9a8d4', .95), animal('dog', '#e7c08a', .95)];
+  const mX0 = [-1.0, 0, 1.0, 2.0];
+  mA.forEach((a, i) => { a.position.set(mX0[i], 0, 0); a.rotation.y = FACE; M.add(a); });
+  const mNabi = animal('cat', '#fbbf24', .95); M.add(mNabi);
+  const MSQ = 'ATGCT', TX = i => -1.28 + i * TOY_GAP * 1.1;
+  const mCars = [...MSQ].map(b => { const c = toyCar(b, { s: 1.1 }); M.add(c); return c; });
+  const mArrow = arrow(.7, ORANGE); M.add(mArrow);
+  const mFront = cyl(.28, .28, .04, BLUE, -1.0, .03, .75); M.add(mFront);
+  const mRoom = mesh(new THREE.CircleGeometry(3.9, 48), '#fce7f3', 0, .4, -1.7); M.add(mRoom);
+  const lHead = label('맨 앞 = 파란 머리', .38, '#bfdbfe'), lTail = label('맨 뒤 = 주황 꼬리', .38, '#fed7aa'), lClick = label('꼬리에 찰칵!', .44, '#fde047');
+  M.add(lHead, lTail, lClick);
+  const mFl = K7B.flash(); M.add(mFl);
+  const bridge = (t) => {
+    const nm = K7B.naming(), m = seg(t, 2.6, 4.8);   // 친구 → 기차 칸
+    setOpacity(mFloor, 1 - m); mFloor.visible = m < .98;
+    mRoom.visible = m > .01; setOpacity(mRoom, m);
+    mA.forEach((a, i) => {
+      a.visible = m < .98; setOpacity(a, 1 - m); a.scale.setScalar(1 - .5 * m); waddle(a, t + i, .12);
+      const c = mCars[i]; c.visible = m > .02; setOpacity(c, m);
+      c.position.set(lerp(mX0[i], TX(i), seg(t, 4.2, 5.6)), lerp(.9, .55, m), 0);
+    });
+    // 맨 앞 파란 표시 → 첫 칸 파란 머리 / 맨 뒤 주황 화살표 → 마지막 칸 주황 꼬리
+    mFront.visible = m < .98; setOpacity(mFront, 1 - m);
+    const tailP = V(TX(3) + .34 * 1.1, .55, 0);
+    mArrow.visible = t < 6.4; mArrow.position.copy(V(2.0, 2.35, 0).lerp(tailP.clone().add(V(0, .9, 0)), seg(t, 4.4, 5.8))); mArrow.scale.setScalar(pulse(t));
+    mCars[3].userData.hook.scale.setScalar(t > 5.6 && t < 9 ? 1 + .45 * Math.abs(Math.sin(t * 5)) : 1);
+    mCars[0].userData.head.scale.setScalar(t > 5.6 && t < 7.4 ? 1 + .35 * Math.abs(Math.sin(t * 5)) : 1);
+    // 나비가 와서 → 새 칸이 되어 꼬리에 찰칵
+    const w = K7B.walk(t, [[0, 4.4, 0], [6.0, 4.4, 0], [7.4, 3.0, 0]]);
+    mNabi.visible = t > 5.9 && t < 8.4; mNabi.position.set(w.x, 0, w.z); mNabi.rotation.y = FACE; waddle(mNabi, t, w.h !== null ? 1 : .12);
+    const n = seg(t, 7.6, 8.4); setOpacity(mNabi, 1 - n); mNabi.scale.setScalar(1 - .5 * n);
+    const c4 = mCars[4], j = seg(t, 8.2, 9.0); c4.visible = t > 7.6; setOpacity(c4, seg(t, 7.6, 8.2));
+    c4.position.set(lerp(3.0, TX(4), j), lerp(1.1, .55, j) + .3 * Math.sin(Math.PI * j), 0);
+    K7B.pop(mFl, t, 9.0, tailP.clone().add(V(.02, 0, .15)));
+    lHead.visible = t > 5.4 && t < 7.6 && !nm; lHead.position.set(TX(0) - .4, 1.6, 0);
+    lTail.visible = t > 5.4 && t < 7.6 && !nm; lTail.position.set(TX(3) + .4, 2.15, 0);
+    lClick.visible = t > 9.0 && !nm; lClick.position.set(TX(4), 1.6, 0);
   };
 
   // ── 몸속: 블록 기차 ──
@@ -1072,12 +1178,11 @@ SCENES.k7_tailOnly = (g) => {
   noL.position.set(X(0) - .3, 1.75, 0); B.add(clickL, noL);
   const fl = K7B.flash(), fl2 = K7B.flash('#ef4444'); B.add(fl, fl2);
   const stray = toyCar('G'); B.add(stray);
-  const dir = arrow(1, '#f97316'); dir.rotation.z = Math.PI / 2; B.add(dir);
-
-  const body = (t, ph) => {
+  const dir = arrow(1, ORANGE); dir.rotation.z = Math.PI / 2; B.add(dir);
+  const body = (t) => {
     const nm = K7B.naming();
     roomL.visible = !nm;
-    let tail = 0, prog = 0;
+    let tail = 0;
     cars.forEach((c, i) => {
       if (i === 0) { c.position.set(X(0), Y, 0); c.visible = true; return; }
       const ta = TA[i], k = seg(t, ta - 1, ta);
@@ -1086,85 +1191,116 @@ SCENES.k7_tailOnly = (g) => {
       c.rotation.z = .5 * (1 - k);
       if (t >= ta) tail = i;
     });
-    prog = tail < 6 ? tail + seg(t, TA[tail + 1] - 1, TA[tail + 1]) : 6;
+    const prog = tail < 6 ? tail + seg(t, TA[tail + 1] - 1, TA[tail + 1]) : 6;
     cars.forEach((c, i) => c.userData.hook.scale.setScalar(i === tail && t < 9.2 ? 1 + .4 * Math.abs(Math.sin(t * 5)) : 1));
     let last = 0; for (let i = 1; i < 7; i++) if (t >= TA[i]) last = i;
     if (last > 0) K7B.pop(fl, t, TA[last], V(X(last) - .32, Y, .15)); else fl.visible = false;
-    clickL.visible = last > 0 && t - TA[last] < .9;
+    clickL.visible = last > 0 && t - TA[last] < .9 && !nm;
     if (clickL.visible) clickL.position.set(X(last) - .32, Y + 1.05, 0);
     pal.position.set(X(0) + .75 + .64 * prog, Y + .55, -.55); wobble(pal, t, 1);
     dir.visible = t < 9.2 && !nm; dir.position.set(X(0) - .2 + .64 * prog, Y + 1.5, 0); dir.scale.setScalar(.8 + .1 * Math.sin(t * 6));
-    // 머리 쪽에 붙으려는 블록 → 톡 튕김
     stray.visible = t > 9.4 && t < 11.3;
     const a = seg(t, 9.4, 10.2), b = seg(t, 10.3, 11.2);
     stray.position.set(lerp(lerp(X(0) - 2.3, X(0) - .72, a), X(0) - 2.8, b), lerp(lerp(Y + 1.4, Y, a), Y + 1.9, b), lerp(lerp(.8, 0, a), .9, b));
     stray.rotation.z = t > 10.2 ? .5 * Math.sin((t - 10.2) * 18) * (1 - b) : 0;
     K7B.pop(fl2, t, 10.2, V(X(0) - .4, Y, .15));
-    noL.visible = t > 10.2 && t < 11.9;
+    noL.visible = t > 10.2 && t < 11.9 && !nm;
   };
 
   const draw = (t, ph) => {
-    const inBody = ph === 3 || (ph === 0 && t >= 12);
-    S.visible = !inBody; B.visible = inBody;
-    if (inBody) body(ph === 0 ? t - 12 : t, ph); else story(t, ph);
+    const which = ph === 0 ? (t < 12 ? 'M' : 'B') : ph <= 2 ? 'S' : ph === 3 ? 'M' : 'B';
+    S.visible = which === 'S'; M.visible = which === 'M'; B.visible = which === 'B';
+    if (which === 'S') story(t, ph); else if (which === 'M') bridge(t); else body(ph === 0 ? t - 12 : t);
   };
-  const front = ['🔍 맨 앞', [1.3, .8, .5], 3.0, '앞에 끼면 안 돼요. "맨 뒤에 서요!"', null, { loop: [2.4, 4.4], slow: .5 }];
-  const back = ['🔍 맨 뒤에 쏙', [-1.6, .8, .3], 3.0, '새 친구는 줄 맨 뒤에 서요', null, { loop: [6.6, 8.6], slow: .5 }];
+  const front = ['🔍 맨 앞', [-1.3, .8, .5], 3.0, '앞에 끼면 안 돼요. "맨 뒤에 서요!"', null, { loop: [2.4, 4.4], slow: .5 }];
+  const back = ['🔍 맨 뒤에 쏙', [1.6, .8, .3], 3.0, '새 친구는 주황 화살표가 있는 줄 맨 뒤에 서요', null, { loop: [6.6, 8.6], slow: .5 }];
+  const morphS = ['🔍 바뀌는 순간', [.4, .7, 0], 4.2, '친구들이 기차 칸으로! 주황 화살표가 주황 꼬리 고리가 돼요', null, { loop: [2.4, 6.2], slow: .5 }];
+  const bTail = ['🔍 나비 찰칵', [TX(3) + .6, .6, 0], 3.0, '새 칸은 주황 꼬리 고리에 찰칵!', null, { loop: [7.4, 9.8], slow: .5 }];
   const tailS = ['🔍 꼬리에 찰칵', [X(2) + .32, Y + .2, 0], 3.2, '새 블록은 주황 꼬리 고리에만 찰칵 붙어요', null, { loop: [3.3, 4.6], slow: .5 }];
   const headS = ['🔍 머리 쪽', [X(0) - .6, Y + .2, 0], 3.2, '파란 머리 쪽에는 안 붙고 톡 튕겨요', null, { loop: [9.5, 11.3], slow: .5 }];
   draw.spots = {
     1: [back, front],
     2: [front, back],
-    3: [tailS, headS],
-    0: [back, ['🔍 꼬리에 찰칵', tailS[1], 3.2, tailS[3], null, { loop: [15.3, 16.6], slow: .5 }]],
+    3: [morphS, bTail],
+    4: [tailS, headS],
+    0: [morphS, bTail, ['🔍 몸속 찰칵', tailS[1], 3.2, tailS[3], null, { loop: [15.3, 16.6], slow: .5 }]],
   };
   draw.cam = {
     2: [[2.4, 0], [4.6, -1], [6.6, 1], [9.4, -1]],
-    3: [[3.3, 0], [5.0, -1], [9.5, 1], [11.6, -1]],
-    0: [[6.6, 0], [9.0, -1], [15.3, 1], [17.2, -1]],
+    3: [[3.0, 0], [6.6, -1], [7.6, 1], [10.6, -1]],
+    4: [[3.3, 0], [5.0, -1], [9.5, 1], [11.6, -1]],
+    0: [[3.0, 0], [6.6, -1], [7.6, 1], [10.4, -1], [15.3, 2], [17.2, -1]],
   };
   return draw;
 };
 
 // ── L05.js ──
-// 7세판 5. 조각조각 이어 쓰기 (오카자키 조각) — 종이 길에 선 긋기 → 몸속 지퍼
+// 7세판 5. 조각조각 이어 쓰기 (오카자키 조각) — 마법 펜 → 종이 길 → (바뀌는 장면) → 몸속 지퍼. 5장면
 LESSONS[4] = {
-  scene: 'k7_pieces', law: '조금씩 이어 그어요', title: '쭉 긋기와 조각 긋기',
-  cam: [0, 3.4, 6.6], tgt: [0, .2, 0], fit: 1.4, T: 27.5,
-  story: '지난번엔 새 블록이 꼬리에만 붙었지요? 오늘은 보리와 두리가 종이 길에 선을 그어요.',
+  scene: 'k7_pieces', law: '조금씩 이어 그어요', title: '마법 펜으로 쭉 긋기와 조각 긋기',
+  cam: [0, 3.4, 6.6], tgt: [0, .2, 0], fit: 1.4, T: 25.5,
+  story: '지난번엔 새 블록이 꼬리 쪽으로만 붙었지요? 오늘은 주황 화살표 쪽으로만 그어지는 마법 펜이 나와요.',
   watch: [
-    ['종이 길이 스르륵 펼쳐져요. 보리는 앞으로 쭉! 두리는 거꾸로만 그을 수 있어서 조금 긋고, 또 조금 그어요.', 14],
-    ['두리가 조각을 긋는 순간과 꿀이가 테이프로 찰싹 붙이는 순간을 크게 봐요.', 14, '🔍 「테이프 찰싹」을 누르면 틈을 이어 붙이는 순간이 천천히 되풀이돼요'],
-    ['몸속에서도 똑같아요! 지퍼가 열리면 한쪽은 쭉, 반대쪽은 조각조각. 붙이는 친구가 찰싹!', 13.5, '🔍 「조각 만들기」를 누르면 짧은 조각이 생기는 순간이 천천히 되풀이돼요'],
+    ['마법 펜은 주황 화살표 쪽으로만 그어져요. 보리 펜은 오른쪽, 두리 펜은 왼쪽!', 9, '🔍 「두리 펜」을 누르면 반대쪽으로는 안 그어지는 게 천천히 되풀이돼요'],
+    ['종이 길이 오른쪽으로 펼쳐져요. 보리는 쭉! 두리 펜은 왼쪽으로만 그어져서 조금 긋고, 옮겨서 또 조금!', 14],
+    ['두리가 조각을 긋는 순간과 꿀이가 노란 테이프로 찰싹 붙이는 순간을 크게 봐요.', 14, '🔍 「테이프 찰싹」을 누르면 틈을 이어 붙이는 순간이 천천히 되풀이돼요'],
+    ['종이 길이 일어서서 몸속으로! 빨간 선은 쭉 이어진 새 줄, 파란 조각은 조각조각 새 줄, 노란 테이프는 노란 붙이는 친구예요.', 12, '🔍 「바뀌는 순간」을 누르면 종이 길이 몸속 블록 줄로 바뀌는 게 천천히 되풀이돼요'],
+    ['몸속에서도 똑같아요! 지퍼가 열리면 빨간 쪽은 쭉, 파란 쪽은 조각조각. 노란 친구가 찰싹!', 13.5, '🔍 「조각 만들기」를 누르면 짧은 조각이 생기는 순간이 천천히 되풀이돼요'],
   ],
-  q: '두리는 선을 어떻게 그었나요?',
+  q: '두리는 파란 선을 어떻게 그었나요?',
   choices: [['🧩', '조금씩 끊어서요!'], ['➖', '한 번에 쭉 그었어요!'], ['🙅', '하나도 안 그었어요!']], answer: 0,
-  hint: '두리 선은 몇 조각이었지요? 조각 사이에 틈이 있었어요.',
-  q2: '몸속에서 조각 사이 틈은 누가 이어요?',
-  choices2: [['🩹', '붙이는 친구가요!'], ['💨', '바람이 붙여 줘요!'], ['🙈', '틈은 그냥 둬요!']], answer2: 0,
-  hint2: '꿀이가 테이프로 찰싹! 몸속에서는 초록 붙이는 친구가 찰싹!',
-  kid: '붙이는 친구가 이어 줘요!',
-  name: { kid: '조각조각 이어 쓰기', term: '오카자키 조각', what: '반대쪽 줄은 한 번에 못 쓰고 짧은 조각으로 나눠 쓴 뒤, 붙이는 친구가 이어 붙여요.' },
+  hint: '두리 펜은 왼쪽으로만 그어져요. 종이는 오른쪽으로 펼쳐지니 조금씩 끊어서 그었어요.',
+  q2: '몸속 파란 조각 사이 틈은 누가 이어요?',
+  choices2: [['🩹', '노란 붙이는 친구!'], ['💨', '바람이 붙여 줘요!'], ['🙈', '틈은 그냥 내버려 둬요!']], answer2: 0,
+  hint2: '꿀이의 노란 테이프가 몸속에서는 노란 붙이는 친구로 바뀌었지요?',
+  kid: '노란 붙이는 친구가 찰싹!',
+  name: { kid: '조각조각 이어 쓰기', term: '오카자키 조각', what: '반대쪽 줄은 한쪽으로만 써지는 펜 때문에 한 번에 못 쓰고, 짧은 조각으로 나눠 쓴 뒤 붙이는 친구가 이어 붙여요.' },
   habit: '찢어진 그림은 버리지 말고 테이프로 이어 붙여요.',
-  adult: '어른용 · 오카자키 조각: DNA 중합효소는 5′→3′으로만 합성하므로, 복제 분기점이 나아가는 방향과 반대인 지연 가닥은 RNA 프라이머에서 시작한 짧은 조각(진핵 약 100~200 뉴클레오타이드)으로 만들어지고, 프라이머 제거 후 DNA 연결효소(리가아제)가 틈을 잇는다. 선도 가닥은 연속 합성. 비유: 보리의 쭉 = 선도 가닥, 두리의 조각 = 지연 가닥, 꿀이의 테이프 = 리가아제, 펼쳐지는 종이 = 열리는 복제 분기점.',
+  adult: '어른용 · 오카자키 조각: DNA 중합효소는 5′→3′으로만 합성하므로(=한쪽으로만 그어지는 마법 펜), 복제 분기점이 나아가는 방향과 반대인 지연 가닥은 RNA 프라이머에서 시작한 짧은 조각(진핵 약 100~200 뉴클레오타이드)으로 만들어지고, 프라이머 제거 후 DNA 연결효소(리가아제)가 틈을 잇는다. 선도 가닥은 연속 합성. 색 짝: 빨간 선 = 선도 가닥, 파란 조각 = 지연 가닥(오카자키 조각), 노란 테이프 = 리가아제, 펼쳐지는 종이 = 열리는 복제 분기점.',
 };
 
 SCENES.k7_pieces = (g) => {
-  const S = new THREE.Group(), B = new THREE.Group(); g.add(S, B);
+  const I = new THREE.Group(), S = new THREE.Group(), M = new THREE.Group(), B = new THREE.Group(); g.add(I, S, M, B);
+  const RED = '#ef4444', BLU = '#3b82f6', YEL = '#facc15', ORANGE = '#f97316';
+  const crayon = c => { const k = new THREE.Group(), tip = mesh(new THREE.ConeGeometry(.08, .18, 12), c, 0, .09, 0); tip.rotation.x = Math.PI; k.add(tip, cyl(.08, .08, .6, c, 0, .48, 0), cyl(.085, .085, .25, '#ffffff', 0, .55, 0)); k.rotation.z = -.4; return k; };
+  const penArrow = right => { const a = arrow(.7, ORANGE); a.rotation.z = right ? Math.PI / 2 : -Math.PI / 2; return a; };
 
-  // ── 종이 길 ──
+  // ── ① 마법 펜 소개 ──
+  I.add(floor(9.6, 4.6, '#bbf7d0'), box(6.4, .03, 2.2, '#ffffff', 0, .02, 0));
+  const iB = animal('bear', '#c68642', .8), iD = animal('rabbit', '#f5f5f4', .8); I.add(iB, iD);
+  const ipB = crayon(RED), ipD = crayon(BLU); ipD.rotation.z = .4; I.add(ipB, ipD);
+  const iaB = penArrow(true), iaD = penArrow(false); I.add(iaB, iaD);
+  const ilB = rod(.06, RED), ilD = rod(.06, BLU); I.add(ilB, ilD);
+  const iNo = label('안 그어져요!', .42, '#fecaca'), iOk = label('왼쪽으로는 쓱!', .42, '#bfdbfe'); I.add(iNo, iOk);
+  const intro = t => {
+    const nm = K7B.naming();
+    const bx = lerp(-2.6, 2.4, seg(t, .4, 3.0));
+    ipB.position.set(bx, .02, -.55); stick(ilB, V(-2.6, .05, -.55), V(bx, .05, -.55)); ilB.visible = bx > -2.55;
+    iB.position.set(bx, 0, -1.35); iB.rotation.y = Math.PI / 2; waddle(iB, t, t > .4 && t < 3 ? 1 : .12);
+    iaB.position.set(bx + .3, .9, -.55);
+    // 두리: 오른쪽으로 밀어 보지만 안 그어지고(흔들), 왼쪽으로는 그어져요
+    let dx;
+    if (t < 3.4) dx = .4; else if (t < 5.2) dx = lerp(.4, 1.3, seg(t, 3.4, 4.4)) - .9 * seg(t, 4.6, 5.2); else dx = lerp(.4, -2.2, seg(t, 5.6, 7.8));
+    const shake = t > 4.0 && t < 4.7 ? .07 * Math.sin(t * 50) : 0;
+    ipD.position.set(dx + shake, .02, .55); iD.position.set(dx, 0, 1.35); iD.rotation.y = t > 5.4 ? -Math.PI / 2 : Math.PI / 2; waddle(iD, t, .3);
+    stick(ilD, V(.4, .05, .55), V(Math.min(.4, dx), .05, .55)); ilD.visible = t > 5.7;
+    iaD.position.set(dx - .3, .9, .55);
+    iNo.visible = t > 4.0 && t < 5.4 && !nm; iNo.position.set(1.0, 1.7, .55);
+    iOk.visible = t > 6 && !nm; iOk.position.set(-.8, 1.7, .55);
+  };
+
+  // ── ② 종이 길 ──
   S.add(floor(9.6, 4.6, '#bbf7d0'));
   const paper = box(1, .03, 2.0, '#ffffff', 0, .02, 0); S.add(paper);
   const roll = new THREE.Group(), rc = cyl(.22, .22, 2.0, '#fef3c7'); rc.rotation.x = Math.PI / 2; roll.add(rc, box(.05, .46, .05, '#f59e0b', 0, 0, 1.01)); S.add(roll);
   const ZB = -.55, ZD = .55, PIECE = [[-3.5, -1.7], [-1.5, .3], [.5, 2.3]], DRAWT = [[3.5, 4.7], [6.6, 7.8], [9.6, 10.8]], GAPS = [-1.6, .4], GLUE = [11.6, 12.6];
-  const lineB = rod(.06, '#ef4444'); S.add(lineB);
-  const pcs = PIECE.map(() => { const r = rod(.06, '#3b82f6'); S.add(r); return r; });
-  const tapes = GAPS.map(x => { const b = box(.42, .05, .3, '#facc15', x, .05, ZD); S.add(b); return b; });
-  const crayon = c => { const k = new THREE.Group(), tip = mesh(new THREE.ConeGeometry(.08, .18, 12), c, 0, .09, 0); tip.rotation.x = Math.PI; k.add(tip, cyl(.08, .08, .6, c, 0, .48, 0), cyl(.085, .085, .25, '#ffffff', 0, .55, 0)); k.rotation.z = -.4; return k; };
-  const crB = crayon('#ef4444'), crD = crayon('#3b82f6'); crD.rotation.z = .4; S.add(crB, crD);
+  const lineB = rod(.06, RED); S.add(lineB);
+  const pcs = PIECE.map(() => { const r = rod(.06, BLU); S.add(r); return r; });
+  const tapes = GAPS.map(x => { const b = box(.42, .05, .3, YEL, x, .05, ZD); S.add(b); return b; });
+  const crB = crayon(RED), crD = crayon(BLU); crD.rotation.z = .4; S.add(crB, crD);
   const P = { bori: animal('bear', '#c68642', .75), duri: animal('rabbit', '#f5f5f4', .75), ggul: animal('pig', '#f9a8d4', .75) };
   Object.values(P).forEach(a => S.add(a));
-  const arB = arrow(.8, '#ef4444'); arB.rotation.z = Math.PI / 2; const arD = arrow(.8, '#3b82f6'); arD.rotation.z = -Math.PI / 2; S.add(arB, arD);
+  const arB = penArrow(true), arD = penArrow(false); S.add(arB, arD);
   const lB = label('쭉!', .46, '#fecaca'), lD = label('조금씩', .44, '#bfdbfe'), lG = label('찰싹!', .46, '#fde047'); S.add(lB, lD, lG);
   const flS = K7B.flash(); S.add(flS);
   const DURIP = [[0, -3.2, 1.25], [1.2, -3.2, 1.25], [3.5, -1.7, 1.25], [4.7, -3.5, 1.25], [6.6, .3, 1.25], [7.8, -1.5, 1.25], [9.6, 2.3, 1.25], [10.8, .5, 1.25]];
@@ -1191,41 +1327,96 @@ SCENES.k7_pieces = (g) => {
     if (gk >= 0) K7B.pop(flS, t, GLUE[gk], V(GAPS[gk], .1, ZD)); else flS.visible = false;
     lG.visible = gk >= 0 && t - GLUE[gk] < 1 && !nm; if (gk >= 0) lG.position.set(GAPS[gk], 1.6, ZD);
     lB.visible = t > .8 && t < 11 && !nm; lB.position.set(bx + .2, 1.4, ZB - .8);
-    lD.visible = drawing >= 0 && !nm && ph !== 2; lD.position.set(w.x, 1.5, ZD + .7);
-    arB.visible = ph !== 3 && t < 11 && t > .8; arB.position.set(bx + .35, .12, ZB - .32);
-    arD.visible = drawing >= 0; arD.position.set(w.x - .3, .12, ZD + .32);
+    lD.visible = drawing >= 0 && !nm && ph !== 3; lD.position.set(w.x, 1.5, ZD + .7);
+    arB.visible = t < 11 && t > .8; arB.position.set(bx + .35, .7, ZB);
+    arD.visible = drawing >= 0; arD.position.set(w.x - .35, .7, ZD);
   };
 
-  // ── 몸속: 지퍼가 열리며 베껴 쓰기 ──
+  // ── 몸속 장면 공통: 지퍼 + 색 띠 (빨간 띠 = 보리 선, 파란 띠 = 두리 조각, 노란 친구 = 테이프) ──
+  const n = 10, X = i => -2.88 + .64 * i, TT = 'ATGCATGGCA', TB = [...TT].map(c => PAIR[c]).join('');
+  const PCS = [[0, 1, 2], [3, 4, 5], [6, 7, 8, 9]], pieceOf = i => PCS.findIndex(p => p.includes(i));
+  const GAPX = [(X(2) + X(3)) / 2, (X(5) + X(6)) / 2];
+  const band = (c, w) => { const b = box(w, .62, .05, c, 0, 0, -.3); setOpacity(b, .55); return b; };
+  function makeBody(G) {
+    const top = [...TT].map(c => { const k = toyCar(c); G.add(k); return k; });
+    const bot = [...TB].map(c => { const k = toyCar(c); k.rotation.z = Math.PI; G.add(k); return k; });
+    const lead = [...TB].map(c => { const k = toyCar(PAIR[c]); G.add(k); return k; });
+    const lag = [...TT].map(c => { const k = toyCar(PAIR[c]); k.rotation.z = Math.PI; G.add(k); return k; });
+    const redBand = band(RED, 1); G.add(redBand);
+    const bluBands = PCS.map(() => { const b = band(BLU, 1); G.add(b); return b; });
+    const glue = critter(.3, YEL, { eyeY: .45 }); G.add(glue);
+    return { top, bot, lead, lag, redBand, bluBands, glue };
+  }
+  // 띠를 x1~x2 사이에 놓기
+  const setBand = (b, x1, x2, y) => { b.visible = x2 - x1 > .05; b.scale.x = Math.max(.01, x2 - x1); b.position.set((x1 + x2) / 2, y, -.3); };
+
+  // ── ④ 바뀌는 장면: 다 그은 종이 길이 일어서며 몸속 블록 줄로 ──
+  const pg = new THREE.Group(); M.add(pg);   // 종이 (눕혀진 상태 → 세워짐)
+  const mPaper = box(7.2, .03, 2.0, '#ffffff', 0, 0, 0); pg.add(mPaper);
+  // 선과 테이프는 종이 앞뒤 양쪽으로 보이게(일어설 때 종이가 뒤집혀도 보여요)
+  const mRed = rod(.07, RED); stick(mRed, V(-3.2, 0, -.45), V(3.2, 0, -.45)); pg.add(mRed);
+  const mBlu = PIECE.map(([l, r]) => { const m = rod(.07, BLU); stick(m, V(l + .2, 0, .45), V(r - .2, 0, .45)); pg.add(m); return m; });
+  const mTape = GAPS.map(x => box(.42, .14, .3, YEL, x, 0, .45)); mTape.forEach(m => pg.add(m));
+  const mFloor = floor(9.6, 4.6, '#bbf7d0'); mFloor.position.y = -1.6; M.add(mFloor);
+  const mRoom = mesh(new THREE.CircleGeometry(3.9, 48), '#fce7f3', 0, 0, -1.7); M.add(mRoom);
+  const MB = makeBody(M);
+  const mL1 = label('빨간 선 = 쭉 새 줄', .38, '#fecaca'), mL2 = label('파란 조각 = 조각조각', .38, '#bfdbfe'); M.add(mL1, mL2);
+  const bridge = t => {
+    const nm = K7B.naming(), up = seg(t, 1.2, 3.6), f = seg(t, 3.6, 6.2), cars = seg(t, 4.2, 7.0);
+    pg.rotation.x = -Math.PI / 2 * up; pg.position.set(0, -.08 * up, .05 * up);
+    pg.visible = f < .99; setOpacity(pg, 1 - f);
+    mFloor.visible = up < .99; setOpacity(mFloor, 1 - up);
+    mRoom.visible = up > .01; setOpacity(mRoom, up);
+    // 몸속 블록: 위아래 바탕 줄 + 빨간 띠 위 새 줄(쭉) + 파란 띠 위 새 조각들, 노란 테이프 → 노란 친구
+    for (let i = 0; i < n; i++) {
+      MB.top[i].position.set(X(i), 1.15, 0); MB.bot[i].position.set(X(i), -1.15, 0);
+      const k = seg(t, 4.2 + i * .12, 4.8 + i * .12);
+      [MB.top[i], MB.bot[i]].forEach(c => { c.visible = k > .01; setOpacity(c, k); });
+      MB.lead[i].position.set(X(i), -.4, 0); MB.lead[i].visible = cars > .01; setOpacity(MB.lead[i], cars);
+      const pk = pieceOf(i), sh = pk === 0 ? -.12 * (1 - seg(t, 8.4, 8.8)) : pk === 2 ? .12 * (1 - seg(t, 9.2, 9.6)) : 0;
+      MB.lag[i].position.set(X(i) + sh, .4, 0); MB.lag[i].visible = cars > .01; setOpacity(MB.lag[i], cars);
+    }
+    setBand(MB.redBand, X(0) - .32, X(9) + .32, -.4); setOpacity(MB.redBand, .55 * Math.max(cars, f));
+    MB.bluBands.forEach((b, k) => { const p = PCS[k]; setBand(b, X(p[0]) - .28, X(p[p.length - 1]) + .28, .4); setOpacity(b, .55 * Math.max(cars, f)); });
+    MB.glue.visible = t > 7.2; const gk = seg(t, 7.6, 9.0);
+    MB.glue.position.set(GAPX[0], .95, .45); MB.glue.scale.setScalar(Math.max(.01, seg(t, 7.2, 7.7))); wobble(MB.glue, t, 1);
+    void gk;
+    mL1.visible = t > 6.6 && t < 11.5 && !nm; mL1.position.set(-.4, -2.05, .3);
+    mL2.visible = t > 6.6 && t < 11.5 && !nm; mL2.position.set(-.4, 2.05, .3);
+  };
+
+  // ── ⑤ 몸속: 지퍼가 열리며 베껴 쓰기 ──
   K7B.room(B, 0);
   const roomL = label('몸속 세포 방', .36, '#be185d'); roomL.position.set(-2.2, 2.5, -1.6); B.add(roomL);
-  const n = 10, X = i => -2.88 + .64 * i, TT = 'ATGCATGGCA', TB = [...TT].map(c => PAIR[c]).join('');
-  const top = [...TT].map(c => { const k = toyCar(c); B.add(k); return k; });
-  const bot = [...TB].map(c => { const k = toyCar(c); k.rotation.z = Math.PI; B.add(k); return k; });
-  const lead = [...TB].map(c => { const k = toyCar(PAIR[c]); B.add(k); return k; });           // 아래 줄의 새 짝: 쭉
-  const lag = [...TT].map(c => { const k = toyCar(PAIR[c]); k.rotation.z = Math.PI; B.add(k); return k; }); // 위 줄의 새 짝: 조각
-  const PCS = [[0, 1, 2], [3, 4, 5], [6, 7, 8, 9]], F = t => Math.min(3.6, -3.4 + .7 * t);
-  const pStart = PCS.map(p => (X(p[p.length - 1]) + .45 + 3.4) / .7), pieceOf = i => PCS.findIndex(p => p.includes(i));
-  const GAPX = [(X(2) + X(3)) / 2, (X(5) + X(6)) / 2], GT = [11.6, 12.5];
-  const zip = critter(.36, '#f472b6', { eyeY: .45 }), glue = critter(.24, '#22c55e', { eyeY: .45 }); B.add(zip, glue);
+  const BB = makeBody(B);
+  const F = t => Math.min(3.6, -3.4 + .7 * t);
+  const pStart = PCS.map(p => (X(p[p.length - 1]) + .45 + 3.4) / .7);
+  const GT = [11.6, 12.5];
+  const zip = critter(.36, '#f472b6', { eyeY: .45 }); B.add(zip);
   const bL = label('쭉!', .44, '#fecaca'), pL = label('조각조각', .42, '#bfdbfe'), gL = label('찰싹!', .46, '#fde047'); B.add(bL, pL, gL);
   const flB = K7B.flash(); B.add(flB);
-  const body = (t, ph) => {
+  const body = (t) => {
     const nm = K7B.naming(), f = F(t);
     roomL.visible = t < 2.5 && !nm;
-    let newestLead = -1, newestLag = -1;
+    let newestLead = -1, newestLag = -1, leadMax = -9;
+    const pieceMin = PCS.map(() => 99), pieceMax = PCS.map(() => -99);
     for (let i = 0; i < n; i++) {
       const o = ease(clamp((f - X(i)) / .7, 0, 1)), yT = lerp(.375, 1.15, o);
-      top[i].position.set(X(i), yT, 0); bot[i].position.set(X(i), -yT, 0);
+      BB.top[i].position.set(X(i), yT, 0); BB.bot[i].position.set(X(i), -yT, 0);
       const tl = (X(i) + .35 + 3.4) / .7, kl = seg(t, tl, tl + .45);
-      lead[i].visible = t > tl; lead[i].position.set(X(i), lerp(-2.0, -.4, kl), lerp(.8, 0, kl)); if (t > tl) newestLead = i;
+      BB.lead[i].visible = t > tl; BB.lead[i].position.set(X(i), lerp(-2.0, -.4, kl), lerp(.8, 0, kl)); if (t > tl) newestLead = i;
+      if (kl >= 1) leadMax = Math.max(leadMax, X(i));
       const pk = pieceOf(i), p = PCS[pk], order = p.length - 1 - p.indexOf(i), ta = pStart[pk] + .35 * order, ka = seg(t, ta, ta + .45);
       const shift = pk === 0 ? -.12 * (1 - seg(t, GT[0], GT[0] + .3)) : pk === 2 ? .12 * (1 - seg(t, GT[1], GT[1] + .3)) : 0;
-      lag[i].visible = t > ta; lag[i].position.set(X(i) + shift, lerp(2.0, .4, ka), lerp(.8, 0, ka)); if (t > ta && t < ta + 1.2) newestLag = i;
+      BB.lag[i].visible = t > ta; BB.lag[i].position.set(X(i) + shift, lerp(2.0, .4, ka), lerp(.8, 0, ka)); if (t > ta && t < ta + 1.2) newestLag = i;
+      if (ka >= 1) { pieceMin[pk] = Math.min(pieceMin[pk], X(i) + shift); pieceMax[pk] = Math.max(pieceMax[pk], X(i) + shift); }
     }
+    // 색 띠가 새 블록을 따라 자라요 (빨간 = 쭉, 파란 = 조각)
+    if (leadMax > -9) setBand(BB.redBand, X(0) - .32, leadMax + .32, -.4); else BB.redBand.visible = false;
+    BB.bluBands.forEach((b, k) => { if (pieceMax[k] > -99) setBand(b, pieceMin[k] - .28, pieceMax[k] + .28, .4); else b.visible = false; });
     zip.position.set(f + .25, 0, -.35); zip.visible = f < 3.5; wobble(zip, t, 1.5);
     const gx = t < GT[0] ? lerp(-4.3, GAPX[0], seg(t, 10.6, GT[0])) : lerp(GAPX[0], GAPX[1], seg(t, GT[0] + .2, GT[1]));
-    glue.visible = t > 10.5; glue.position.set(gx, .78, -.45); wobble(glue, t, 1);
+    BB.glue.visible = t > 10.5; BB.glue.position.set(gx, .95, .35); wobble(BB.glue, t, 1);
     let gk = -1; GT.forEach((tg, k) => { if (t >= tg) gk = k; });
     if (gk >= 0) K7B.pop(flB, t, GT[gk], V(GAPX[gk], .4, .2)); else flB.visible = false;
     gL.visible = gk >= 0 && t - GT[gk] < 1 && !nm; if (gk >= 0) gL.position.set(GAPX[gk], 1.95, 0);
@@ -1233,162 +1424,227 @@ SCENES.k7_pieces = (g) => {
     pL.visible = newestLag >= 0 && !gL.visible && !nm; if (pL.visible) pL.position.set(X(newestLag), 2.0, .3);
   };
 
+  const BRT = 12; // ph0: 앞 12초 = 바뀌는 장면, 뒤 = 몸속
   const draw = (t, ph) => {
-    const inBody = ph === 3 || (ph === 0 && t >= 14);
-    S.visible = !inBody; B.visible = inBody;
-    if (inBody) body(ph === 0 ? t - 14 : t, ph); else story(t, ph);
+    const which = ph === 0 ? (t < BRT ? 'M' : 'B') : ph === 1 ? 'I' : ph <= 3 ? 'S' : ph === 4 ? 'M' : 'B';
+    I.visible = which === 'I'; S.visible = which === 'S'; M.visible = which === 'M'; B.visible = which === 'B';
+    if (which === 'I') intro(t); else if (which === 'S') story(t, ph); else if (which === 'M') bridge(t); else body(ph === 0 ? t - BRT : t);
   };
-  const duriS = ['🔍 두리 조각', crD, 3.0, '두리는 거꾸로만 그어서 조금씩 끊어 그어요', [0, .7], { loop: [6.4, 8.0], slow: .5 }];
-  const tapeS = ['🔍 테이프 찰싹', [GAPS[0], .1, ZD], 2.8, '꿀이가 틈을 테이프로 찰싹 이어 붙여요', [0, .75], { loop: [11.0, 12.2], slow: .5 }];
-  const pieceS = ['🔍 조각 만들기', [X(4), .45, 0], 3.4, '반대쪽 줄은 짧은 조각을 거꾸로 만들어요', null, { loop: [5.8, 7.4], slow: .5 }];
-  const glueS = ['🔍 붙이는 친구', [GAPX[0], .5, 0], 3.2, '초록 친구가 조각 사이 틈을 찰싹 붙여요', null, { loop: [10.8, 12.0], slow: .5 }];
+  const penS = ['🔍 두리 펜', [.6, .3, .55], 2.8, '두리 펜은 오른쪽으로는 안 그어지고, 왼쪽으로만 쓱!', [0, .8], { loop: [3.3, 7.0], slow: .5 }];
+  const duriS = ['🔍 두리 조각', crD, 3.0, '두리 펜은 왼쪽으로만 그어져서 조금씩 끊어 그어요', [0, .7], { loop: [6.4, 8.0], slow: .5 }];
+  const tapeS = ['🔍 테이프 찰싹', [GAPS[0], .1, ZD], 2.8, '꿀이가 틈을 노란 테이프로 찰싹 이어 붙여요', [0, .75], { loop: [11.0, 12.2], slow: .5 }];
+  const morphS = ['🔍 바뀌는 순간', [0, 0, 0], 7.6, '종이 길이 일어서서 몸속 블록 줄로! 색이 똑같아요', null, { loop: [1.0, 7.4], slow: .5 }];
+  const gluePairS = ['🔍 노란 친구', [GAPX[0], .6, 0], 3.0, '노란 테이프가 노란 붙이는 친구로 바뀌었어요', null, { loop: [6.8, 9.6], slow: .5 }];
+  const pieceS = ['🔍 조각 만들기', [X(4), .45, 0], 3.4, '파란 쪽 줄은 짧은 조각을 거꾸로 만들어요', null, { loop: [5.8, 7.4], slow: .5 }];
+  const glueS = ['🔍 붙이는 친구', [GAPX[0], .5, 0], 3.2, '노란 친구가 조각 사이 틈을 찰싹 붙여요', null, { loop: [10.8, 12.0], slow: .5 }];
   draw.spots = {
-    1: [duriS, tapeS],
+    1: [penS],
     2: [duriS, tapeS],
-    3: [pieceS, glueS],
-    0: [tapeS, ['🔍 붙이는 친구', glueS[1], 3.2, glueS[3], null, { loop: [24.8, 26.0], slow: .5 }]],
+    3: [duriS, tapeS],
+    4: [morphS, gluePairS],
+    5: [pieceS, glueS],
+    0: [morphS, gluePairS, ['🔍 몸속 찰싹', glueS[1], 3.2, glueS[3], null, { loop: [22.8, 24.0], slow: .5 }]],
   };
   draw.cam = {
-    2: [[3.3, 0], [5.0, -1], [11.0, 1], [13.2, -1]],
-    3: [[5.6, 0], [7.6, -1], [10.9, 1], [12.9, -1]],
-    0: [[11.0, 0], [13.2, -1], [24.9, 1], [27.0, -1]],
+    1: [[3.4, 0], [7.8, -1]],
+    3: [[3.3, 0], [5.0, -1], [11.0, 1], [13.2, -1]],
+    4: [[1.0, 0], [6.6, -1], [7.4, 1], [10.4, -1]],
+    5: [[5.6, 0], [7.6, -1], [10.9, 1], [12.9, -1]],
+    0: [[1.0, 0], [6.6, -1], [7.4, 1], [10.4, -1], [22.9, 2], [25.0, -1]],
   };
   return draw;
 };
 
 // ── L06.js ──
-// 7세판 6. 끝 마개 (텔로미어) — 짧아지는 크레파스, 신발끈 마개 → 몸속 DNA 끝 마개
+// 7세판 6. 끝 마개 (텔로미어) — 신발끈 하나로 끝까지: 닳는 마개 → 마개가 지켜요 → 다 닳으면 풀풀 → 끈이 DNA 블록으로 바뀌어요 → 몸속
 LESSONS[5] = {
-  scene: 'k7_caps', law: '끝이 조금씩 닳아요', title: '크레파스와 신발끈 마개',
-  cam: [0, 2.6, 7.4], tgt: [0, .45, 0], fit: 1.35, T: 25,
-  story: '지난번엔 조각조각 이어 썼지요? 오늘은 보리의 크레파스와 신발끈을 봐요.',
+  scene: 'k7_caps', law: '끝이 조금씩 닳아요', title: '보리의 신발끈 마개',
+  cam: [0, 1.6, 5.6], tgt: [0, 1.0, 0], fit: 1.0, T: 21,
+  story: '지난번엔 조각조각 이어 썼지요? 오늘은 보리의 신발끈 끝에 달린 회색 마개를 봐요.',
   watch: [
-    ['보리가 크레파스로 그림을 그려요. 1번, 2번, 3번… 쓸 때마다 조금씩 짧아져요.', 12],
-    ['신발끈 끝을 크게 봐요. 마개가 있으면 구멍에 쏙! 마개가 없으면 풀풀 풀려요.', 10, '🔍 「풀리는 끝」을 누르면 끈이 풀풀 풀리는 모습이 천천히 되풀이돼요'],
-    ['몸속 DNA 끝에도 회색 마개가 있어요. 베낄 때마다 한 칸씩 닳지만, 안쪽 블록은 그대로!', 13, '🔍 「오른쪽 끝」을 누르면 마개가 한 칸 떨어지는 순간이 천천히 되풀이돼요'],
+    ['보리가 신발을 신을 때마다 끈이 구멍을 쏙 지나가요. 1번, 2번, 3번… 회색 마개가 한 칸씩 닳아요.', 13],
+    ['마개가 남아 있으면 끈 끝이 단단해서 구멍에 쏙! 끈이 풀리지 않아요.', 10, '🔍 「마개 끝」을 누르면 마개가 구멍을 쏙 지나가는 순간이 천천히 되풀이돼요'],
+    ['마지막 마개까지 닳았어요. 끈 끝이 풀풀 풀려서 구멍에 안 들어가요!', 10, '🔍 「풀린 끝」을 누르면 끈이 풀풀 풀리는 순간이 천천히 되풀이돼요'],
+    ['신발끈을 크게 보면… 끈이 DNA 블록으로 바뀌어요! 회색 마개는 회색 마개 블록이 돼요.', 11, '🔍 「오른쪽 끝」을 누르면 회색 마개가 회색 블록으로 바뀌는 순간이 되풀이돼요'],
+    ['몸속 DNA도 베낄 때마다 끝 마개 블록이 한 칸씩 닳아요. 그래도 안쪽 색깔 블록은 그대로!', 12, '🔍 「오른쪽 끝」을 누르면 마개 블록이 한 칸 떨어지는 순간이 천천히 되풀이돼요'],
   ],
-  q: '크레파스는 쓸 때마다 어떻게 돼요?',
-  choices: [['✏️', '점점 짧아져요!'], ['📏', '점점 길어져요!'], ['🌈', '색깔이 바뀌어요!']], answer: 0,
-  hint: '처음 크레파스(흐린 그림자)랑 지금 크레파스 길이를 비교해 봐요.',
-  q2: 'DNA 끝 회색 마개는 왜 있을까요?',
-  choices2: [['🛡️', '안쪽을 지켜 줘요!'], ['🎀', '예쁘게 꾸미고 싶어서!'], ['🍬', '간식으로 먹으려고!']], answer2: 0,
-  hint2: '신발끈 마개가 끈이 풀리지 않게 지켜 줬지요? DNA 마개도 똑같아요.',
-  kid: '안쪽을 지켜 줘요!',
-  name: { kid: '끝 마개', term: '텔로미어', what: 'DNA 양쪽 끝에 붙은 마개 블록이에요. 베낄 때마다 조금씩 닳지만, 안쪽의 중요한 블록을 지켜 줘요.' },
-  habit: '크레파스는 꾹꾹 누르지 말고 살살 써요. 오래오래 쓸 수 있어요!',
-  adult: '어른용 · 텔로미어: 염색체 끝의 TTAGGG 반복 서열과 보호 단백질(셸터린)로 된 구조. 지연 가닥 맨 끝의 프라이머 자리를 채울 수 없는 말단 복제 문제 때문에 복제할 때마다 조금씩 짧아지고, 충분히 짧아지면 세포는 분열을 멈춘다(복제 노화). 생식세포·줄기세포는 텔로머레이스로 다시 늘린다. 비유: 닳는 크레파스·신발끈 마개 = 닳아도 안쪽 유전자를 지키는 끝 마개.',
+  q: '회색 마개는 신발을 신을 때마다 어떻게 됐나요?',
+  choices: [['✂️', '조금씩 닳았어요!'], ['📏', '점점 더 길어졌어요!'], ['🌈', '무지개색이 됐어요!']], answer: 0,
+  hint: '1번, 2번, 3번 신을 때마다 회색 마개 칸이 하나씩 떨어졌지요?',
+  q2: 'DNA 끝 회색 마개 블록은 무엇을 지켜요?',
+  choices2: [['🛡️', '안쪽 블록을 지켜요!'], ['🎀', '리본을 예쁘게 묶어요!'], ['🍬', '간식 블록을 숨겨요!']], answer2: 0,
+  hint2: '회색 마개 블록이 닳아도 가운데 색깔 블록은 그대로였어요. 신발끈 마개가 끈을 지킨 것처럼요!',
+  kid: '안쪽 블록을 지켜요!',
+  name: { kid: '끝 마개', term: '텔로미어', what: 'DNA 양쪽 끝에 붙은 회색 마개 블록이에요. 신발끈 마개처럼, 베낄 때마다 조금씩 닳지만 안쪽의 중요한 블록을 지켜 줘요.' },
+  habit: '신발끈은 살살 당겨서 묶어요. 끈 끝 마개가 오래가요!',
+  adult: '어른용 · 텔로미어: 염색체 끝의 TTAGGG 반복 서열과 보호 단백질(셸터린)로 된 구조. 지연 가닥 맨 끝의 프라이머 자리를 채울 수 없는 말단 복제 문제 때문에 복제할 때마다 조금씩 짧아지고, 충분히 짧아지면 세포는 분열을 멈춘다(복제 노화). 생식세포·줄기세포는 텔로머레이스로 다시 늘린다. 비유: 신발끈 끝 마개(aglet) = 닳아도 안쪽 유전자를 지키는 끝 마개, 회색 = 마개 블록.',
 };
 
 SCENES.k7_caps = (g) => {
-  const S = new THREE.Group(), L = new THREE.Group(), B = new THREE.Group(); g.add(S, L, B);
+  const naming = () => { try { return mode === 'name'; } catch (e) { return false; } };
+  const GREY = '#9ca3af', LACE = '#f43f5e', RY = 1.25, RX = -.5, SEGW = .19, NSEG = 4, XL = -1.4, XR = .6;
 
-  // ── 크레파스 그림 ──
-  S.add(floor(9.6, 4.4, '#fde7c4'), box(4.6, .04, 3.0, '#ffffff', .3, .02, 0));
-  const ROWS = [-.9, 0, .9], DT = [[.8, 3.3], [4.0, 6.5], [7.2, 9.7]];
-  const zig = z => Array.from({ length: 8 }, (_, j) => V(-1.6 + j * .55, .05, z + (j % 2 ? .25 : -.25)));
-  const ZZ = ROWS.map(zig), segs = ZZ.map(pts => pts.slice(1).map(() => { const r = rod(.05, '#ef4444'); S.add(r); return r; }));
-  const cray = new THREE.Group(), tip = mesh(new THREE.ConeGeometry(.13, .26, 16), '#ef4444', 0, .13, 0); tip.rotation.x = Math.PI;
-  const cbody = cyl(.13, .13, 1, '#ef4444'), band = cyl(.135, .135, .3, '#ffffff');
-  cray.add(tip, cbody, band); S.add(cray);
-  const ghost = cyl(.14, .14, 2, tmat('#ef4444', .22)); S.add(ghost);
-  const bori = animal('bear', '#c68642', .85); bori.position.set(-3.1, 0, .2); bori.rotation.y = .6; S.add(bori);
-  const cntL = ['1번', '2번', '3번'].map(s => { const l = label(s, .5, '#fde047'); l.position.set(2.3, 2.0, 0); S.add(l); return l; });
-  const shortL = label('짧아졌어요!', .44, '#fde047'); shortL.position.set(-1.6, 2.6, 0); S.add(shortL);
-  const story = (t) => {
-    const nm = K7B.naming(), ps = DT.map(([a, b]) => clamp((t - a) / (b - a), 0, 1)), used = ps[0] + ps[1] + ps[2];
-    let tp = V(-1.6, .05, ROWS[0]);
-    ZZ.forEach((pts, k) => {
-      const p = ps[k] * 7;
-      segs[k].forEach((r, j) => { const f = clamp(p - j, 0, 1); r.visible = f > .02; if (r.visible) stick(r, pts[j], pts[j].clone().lerp(pts[j + 1], f)); });
-      if (t >= DT[k][0] && t <= DT[k][1]) { const j = Math.min(6, Math.floor(p)); tp = pts[j].clone().lerp(pts[j + 1], p - j); }
+  // ═════ 신발과 신발끈 (장면 1~3) ═════
+  const SH = new THREE.Group(); g.add(SH);
+  SH.add(floor(7, 3.2, '#e0f2fe'));
+  SH.add(box(2.4, .22, 1.2, '#ffffff', .9, .11, 0), box(2.0, .8, 1.1, '#60a5fa', 1.0, .6, 0));
+  const toe = ball(.5, '#60a5fa', 1.95, .52, 0); toe.scale.set(1, .75, .95); SH.add(toe);
+  SH.add(box(.7, .42, 1.0, '#3b82f6', .15, .98, 0), cyl(.04, .04, .35, '#cbd5e1', RX, 1.0, 0));
+  const ring = mesh(new THREE.TorusGeometry(.16, .045, 8, 28), '#e5e7eb', RX, RY, 0); ring.rotation.y = Math.PI / 2; SH.add(ring);
+  const lace = rod(.06, LACE); SH.add(lace);
+  const caps = Array.from({ length: NSEG }, () => { const c = cyl(.078, .078, SEGW - .02, GREY); c.rotation.z = Math.PI / 2; SH.add(c); return c; });
+  const fallCap = cyl(.078, .078, SEGW - .02, GREY); fallCap.rotation.z = Math.PI / 2; fallCap.material.transparent = true; SH.add(fallCap);
+  const threads = Array.from({ length: 5 }, () => { const r = rod(.022, '#fb7185'); SH.add(r); return r; });
+  const bori = animal('bear', '#c68642', .75); bori.position.set(-2.4, 0, .9); bori.rotation.y = .5; SH.add(bori);
+  const cntL = ['1번', '2번', '3번'].map(s => { const l = label(s, .5, '#fde047'); l.position.set(-1.3, 2.3, 0); SH.add(l); return l; });
+  const inL = label('쏙!', .5, '#fde047'), wornL = label('마개가 짧아졌어요', .4, '#fde047'), frayL = label('풀풀! 안 들어가요', .42, '#fecaca'), keepL = label('마개가 있으면 쏙!', .42, '#fde047');
+  inL.position.set(RX + .4, 1.85, 0); wornL.position.set(-.6, 2.4, 0); frayL.position.set(-.8, 2.2, 0); keepL.position.set(-.6, 2.5, 0); SH.add(inL, wornL, frayL, keepL);
+  let tipNow = V();
+  // xe: 끈 끝 x, worn: 닳은 칸 수, fall: 떨어지는 칸 [0~1, x], fray: 풀림 0~1
+  function setLace(t, xe, worn, fall, fray) {
+    const r = NSEG - worn, endX = xe - r * SEGW;
+    stick(lace, V(-2.7, RY, 0), V(endX + .01, RY, 0));
+    caps.forEach((c, j) => { c.visible = j < r; c.position.set(xe - SEGW / 2 - j * SEGW, RY, 0); });
+    fallCap.visible = !!fall && fall[0] < 1;
+    if (fallCap.visible) { const k = fall[0]; fallCap.position.set(fall[1] + .3 * k, RY - 1.3 * k * k, .25 * k); fallCap.rotation.x = 4 * k; fallCap.material.opacity = 1 - k * k; }
+    threads.forEach((m, j) => {
+      m.visible = fray > .01;
+      if (!m.visible) return;
+      const a = (j - 2) * .45 * fray;
+      stick(m, V(endX - .02, RY, 0), V(endX + .28 + .1 * fray, RY + .3 * Math.sin(a) * (1 + .4 * fray) + .02 * Math.sin(t * 6 + j), .32 * Math.cos(a) * fray * (j % 2 ? 1 : -1)));
     });
-    // 그림 사이에는 다음 줄 시작으로 이동
-    for (let k = 0; k < 2; k++) if (t > DT[k][1] && t < DT[k + 1][0]) tp = ZZ[k][7].clone().lerp(ZZ[k + 1][0], seg(t, DT[k][1], DT[k + 1][0]));
-    if (t >= DT[2][1]) tp = ZZ[2][7].clone().lerp(V(2.4, .05, .4), seg(t, 9.7, 10.4));
-    const len = 2 - .45 * used;
-    cray.position.copy(tp); cray.rotation.set(-.35, 0, -.45);
-    cbody.scale.y = len; cbody.position.y = .26 + len / 2; band.position.y = .26 + len * .7; band.scale.y = Math.min(1, len / 1.2);
-    ghost.visible = t > 4; ghost.position.copy(cray.position); ghost.rotation.copy(cray.rotation);
-    ghost.position.add(V(0, .26 + 1, 0).applyEuler(cray.rotation));
-    const k = DT.findIndex(([a, b]) => t >= a && t < b + 1.1);
-    cntL.forEach((l, i) => l.visible = i === k && !nm);
-    shortL.visible = t > 10 && !nm;
-    bori.userData.armR.rotation.z = t > 10 ? 2.4 + .4 * Math.sin(t * 8) : 0; waddle(bori, t, t > 10 ? .6 : .12);
-  };
+    tipNow = V(xe, RY, 0);
+  }
+  function bear(t, happy) {
+    bori.userData.armR.rotation.z = happy ? -2.2 - .3 * Math.sin(t * 7) : 0; waddle(bori, t, happy ? .5 : .12);
+    bori.userData.head.rotation.y = 0;
+  }
+  // 장면 1: 세 번 신기 → 한 칸씩 닳기
+  const C0 = .6, CL = 3.9;
+  function wearScene(t) {
+    const nm = naming();
+    let worn = 0, xe = XL, fall = null;
+    for (let c = 0; c < 3; c++) {
+      const u = t - (C0 + CL * c);
+      if (u > 2.2) worn = c + 1;
+      if (u >= 0 && u < CL) {
+        xe = u < 1.4 ? lerp(XL, XR, ease(u / 1.4)) : u < 2.6 ? XR : lerp(XR, XL, seg(u, 2.6, 3.6));
+        if (u > 2.2 && u < 3.4) fall = [seg(u, 2.2, 3.4), xe];
+        cntL.forEach((l, i) => l.visible = i === c && !nm);
+        ring.scale.setScalar(u > .55 && u < .95 ? 1.15 : 1);
+        inL.visible = u > .7 && u < 1.6 && !nm;
+      }
+    }
+    if (t > C0 + CL * 3) { xe = XL; cntL.forEach(l => l.visible = false); inL.visible = false; }
+    if (t < C0) { cntL.forEach(l => l.visible = false); inL.visible = false; }
+    setLace(t, xe, worn, fall, 0);
+    wornL.visible = t > 12 && !nm; keepL.visible = frayL.visible = false;
+    caps.forEach((c, j) => c.scale.setScalar(t > 12 && j === 0 ? pulse(t) : 1));
+    bear(t, t > 12);
+  }
+  // 장면 2: 마개가 남아 있으면 쏙 (두 번)
+  function keepScene(t) {
+    const nm = naming();
+    const u = t % 5, xe = u < 1.6 ? lerp(XL, XR, ease(u / 1.6)) : u < 3.4 ? XR : lerp(XR, XL, seg(u, 3.4, 4.6));
+    setLace(t, xe, 3, null, 0);
+    ring.scale.setScalar(u > .7 && u < 1.1 ? 1.15 : 1);
+    caps.forEach(c => c.scale.setScalar(pulse(t)));
+    inL.visible = u > .9 && u < 2.6 && !nm; keepL.visible = t > 1 && !nm; frayL.visible = wornL.visible = false;
+    cntL.forEach(l => l.visible = false); bear(t, u > 1 && u < 3);
+  }
+  // 장면 3: 마지막 마개도 닳아요 → 풀풀 → 안 들어가요
+  function frayScene(t) {
+    const nm = naming();
+    const worn = t > 1.6 ? 4 : 3, fall = t > 1.6 && t < 2.8 ? [seg(t, 1.6, 2.8), XL] : null;
+    const fray = seg(t, 2.2, 4.0);
+    let xe = XL;
+    if (t > 4.4 && t < 7.6) { const u = t - 4.4; xe = u < 1.0 ? lerp(XL, RX - .3, ease(u)) : u < 2.4 ? RX - .3 + .05 * Math.sin(u * 30) : lerp(RX - .3, XL, seg(u, 2.4, 3.2)); }
+    caps.forEach(c => c.scale.setScalar(1));
+    setLace(t, xe, worn, fall, fray);
+    ring.scale.setScalar(1);
+    frayL.visible = t > 4.8 && !nm; keepL.visible = inL.visible = wornL.visible = false; cntL.forEach(l => l.visible = false);
+    bori.userData.head.rotation.y = t > 5.5 && t < 8 ? .4 * Math.sin(t * 12) : 0; bori.userData.armR.rotation.z = 0; waddle(bori, t, .1);
+  }
 
-  // ── 신발끈 ──
-  L.add(floor(8, 3, '#e0f2fe')); L.position.y = 0;
-  const shoe = box(.16, 1.9, 1.6, '#60a5fa', .6, 1.0, 0); L.add(shoe, box(.5, .14, 1.8, '#ffffff', .6, .07, 0));
-  for (const y of [1.35, .55]) for (const hx of [.51, .69]) { const r = mesh(new THREE.TorusGeometry(.15, .04, 8, 24), '#e5e7eb', hx, y, 0); r.rotation.y = Math.PI / 2; L.add(r); }
-  const laceA = rod(.075, '#f43f5e'), laceB = rod(.075, '#f43f5e'), cap = cyl(.085, .085, .32, '#9ca3af'); cap.rotation.z = Math.PI / 2; L.add(laceA, laceB, cap);
-  const threads = Array.from({ length: 5 }, () => { const r = rod(.022, '#fb7185'); L.add(r); return r; });
-  const duri = animal('rabbit', '#f5f5f4', .8); duri.position.set(2.9, 0, .5); duri.rotation.y = -.5; L.add(duri);
-  const inL = label('쏙!', .48, '#fde047'), frayL = label('풀풀!', .46, '#fecaca'), keepL = label('마개가 지켜요!', .42, '#fde047');
-  inL.position.set(2.1, 1.9, 0); frayL.position.set(-.9, .02, .5); keepL.position.set(1.0, 2.35, 0); L.add(inL, frayL, keepL);
-  const YA = 1.35, YB = .55;
-  const lace = (t) => {
-    const nm = K7B.naming();
-    const xa = -1.6 + 4 * seg(t, .5, 4.0);
-    stick(laceA, V(-3.2, YA, 0), V(xa - .16, YA, 0)); cap.position.set(xa, YA, 0);
-    const xb = lerp(-1.6, .4, seg(t, .5, 2.4)) + (t > 2.4 && t < 4.4 ? .05 * Math.sin(t * 30) : 0);
-    stick(laceB, V(-3.2, YB, 0), V(xb, YB, 0));
-    const fray = seg(t, 1.2, 4.2);
-    threads.forEach((r, j) => { const a = (j - 2) * .38 * fray; stick(r, V(xb - .05, YB, 0), V(xb + .32, YB + .32 * Math.sin(a) * (1 + .3 * fray), .3 * Math.cos(a) * fray * (j % 2 ? 1 : -1))); });
-    inL.visible = t > 2.6 && t < 5 && !nm; frayL.visible = t > 2.6 && t < 7 && !nm; keepL.visible = t > 5.2 && t < 9.6 && !nm;
-    cap.scale.setScalar(t > 5.2 && t < 9.6 ? pulse(t) : 1);
-    duri.userData.armL.rotation.z = t > 5.2 ? -2.2 - .3 * Math.sin(t * 7) : 0; waddle(duri, t, .2);
-  };
-
-  // ── 몸속: DNA 끝 마개 ──
-  K7B.room(B, .2);
-  const roomL = label('몸속 세포 방', .36, '#be185d'); roomL.position.set(-2.2, 2.6, -1.6); B.add(roomL);
-  const s = .75, NC = 4, MID = 'ATGCGT', N = NC * 2 + MID.length, X = i => (i - (N - 1) / 2) * TOY_GAP * s, YT = .55, YB2 = YT - .55;
-  const isCap = i => i < NC || i >= N - NC, grey = m => m.material?.color?.set('#9ca3af');
+  // ═════ 다리: 신발끈이 DNA 블록으로 바뀌어요 (장면 4) + 몸속 (장면 5) ═════
+  const s = .55, N = NSEG * 2 + 3, MID = 'ATG', GAPX = TOY_GAP * s, X = i => (i - (N - 1) / 2) * GAPX, YT = 1.35, YB = YT - .62 * s;
+  const isCap = i => i < NSEG || i >= N - NSEG;
+  const D = new THREE.Group(); g.add(D);
+  const room = new THREE.Group(); D.add(room);
+  room.add(mesh(new THREE.CircleGeometry(2.9, 48), '#fce7f3', 0, 1.1, -1.4), mesh(new THREE.TorusGeometry(2.9, .07, 8, 64), '#f9a8d4', 0, 1.1, -1.4));
+  const roomL = label('몸속 세포 방', .38, '#be185d'); roomL.position.set(0, 2.75, -1.3); room.add(roomL);
+  // 다리용 신발끈 (블록 자리와 똑같이)
+  const BL = new THREE.Group(); D.add(BL);
+  const bLace = rod(.06, LACE); stick(bLace, V(X(NSEG - 1) + GAPX / 2, YT, 0), V(X(N - NSEG) - GAPX / 2, YT, 0)); BL.add(bLace);
+  const bCaps = []; for (let i = 0; i < N; i++) if (isCap(i)) { const c = cyl(.078, .078, GAPX - .03, GREY); c.rotation.z = Math.PI / 2; c.position.set(X(i), YT, 0); BL.add(c); bCaps.push(c); }
   const pairs = Array.from({ length: N }, (_, i) => {
-    const b = isCap(i) ? 'G' : MID[i - NC], tp = toyCar(b, { s }), bt = toyCar(PAIR[b], { s }); bt.rotation.z = Math.PI;
-    if (isCap(i)) for (const c of [tp, bt]) [c.userData.body, c.userData.stem, c.userData.shape].forEach(grey);
-    B.add(tp, bt); return { tp, bt, k: isCap(i) ? Math.min(i, N - 1 - i) : -1 };
+    const b = isCap(i) ? 'G' : MID[i - NSEG], tp = toyCar(b, { s }), bt = toyCar(PAIR[b], { s }); bt.rotation.z = Math.PI;
+    if (isCap(i)) for (const c of [tp, bt]) [c.userData.body, c.userData.stem, c.userData.shape].forEach(m => m.material.color.set(GREY));
+    D.add(tp, bt); return { tp, bt, k: isCap(i) ? Math.min(i, N - 1 - i) : -1, i };
   });
-  const glow = box(MID.length * TOY_GAP * s + .2, 1.5, .1, tmat('#fde047', .3), 0, .28, -.35); B.add(glow);
-  const copier = critter(.32, '#f472b6', { eyeY: .45 }); B.add(copier);
-  const cnt = ['1번 베꼈어요', '2번 베꼈어요', '3번 베꼈어요'].map(t => { const l = label(t, .4, '#fde047'); l.position.set(0, 1.95, 0); B.add(l); return l; });
-  const safeL = label('안쪽은 그대로!', .44, '#fde047'); safeL.position.set(0, 1.95, 0); B.add(safeL);
-  const body = (t) => {
-    const nm = K7B.naming();
-    roomL.visible = t < 2.5 && !nm;
-    pairs.forEach(({ tp, bt, k }, i) => {
+  const dotL = label('● 회색 마개', .36, '#e5e7eb'), dot2 = label('● 회색 마개 블록', .36, '#e5e7eb'), dnaL = label('DNA 블록으로 바뀌어요!', .4, '#fde047');
+  dotL.position.set(X(N - 2), YT + .75, 0); dot2.position.set(X(N - 2), YT - 1.05, 0); dnaL.position.set(0, YT + 1.4, 0); D.add(dotL, dot2, dnaL);
+  const copier = critter(.3, '#f472b6', { eyeY: .45 }); D.add(copier);
+  const cnt = ['1번 베꼈어요', '2번 베꼈어요', '3번 베꼈어요'].map(tx => { const l = label(tx, .4, '#fde047'); l.position.set(0, 2.55, 0); D.add(l); return l; });
+  const safeL = label('안쪽은 그대로!', .44, '#fde047'); safeL.position.set(0, 2.55, 0); D.add(safeL);
+  const glow = box(3 * GAPX + .2, 1.0, .1, tmat('#fde047', .3), 0, (YT + YB) / 2, -.35); D.add(glow);
+  const resetPairs = (op) => pairs.forEach(({ tp, bt, i }) => {
+    tp.visible = bt.visible = op > .01; tp.position.set(X(i), YT, 0); bt.position.set(X(i), YB, 0);
+    tp.rotation.z = 0; bt.rotation.z = Math.PI; tp.scale.setScalar(1); bt.scale.setScalar(1);
+    setOpacity(tp, op); setOpacity(bt, op);
+  });
+  function bridge(t) {
+    const nm = naming(), k = seg(t, 2.4, 5.6);
+    room.visible = false; copier.visible = false; cnt.forEach(l => l.visible = false); safeL.visible = glow.visible = false;
+    BL.visible = k < .99; setOpacity(BL, 1 - k);
+    bCaps.forEach(c => c.scale.setScalar(t > .6 && t < 2.4 ? pulse(t) : 1));
+    resetPairs(k);
+    dotL.visible = t < 4.2 && !nm; dot2.visible = t > 4.2 && !nm; dnaL.visible = t > 3 && t < 9 && !nm;
+    pairs.forEach(({ tp, bt, k: kk }) => { if (kk >= 0 && t > 6.4) { const p = 1 + .1 * Math.abs(Math.sin(t * 5)); tp.scale.setScalar(p); bt.scale.setScalar(p); } });
+  }
+  function body(t) {
+    const nm = naming();
+    BL.visible = false; dotL.visible = dot2.visible = dnaL.visible = false;
+    room.visible = true; roomL.visible = t < 2.4 && !nm;
+    resetPairs(1);
+    pairs.forEach(({ tp, bt, k, i }) => {
       const td = 2.8 + 3 * k, d = k >= 0 && k < 3 ? seg(t, td, td + .8) : 0, side = i < N / 2 ? -1 : 1;
       tp.visible = bt.visible = d < .99;
-      tp.position.set(X(i) + side * .5 * d, YT - 2.2 * d * d, .6 * d); bt.position.set(X(i) + side * .5 * d, YB2 - 2.2 * d * d, .6 * d);
+      tp.position.set(X(i) + side * .5 * d, YT - 2 * d * d, .6 * d); bt.position.set(X(i) + side * .5 * d, YB - 2 * d * d, .6 * d);
       tp.rotation.z = side * 1.2 * d; bt.rotation.z = Math.PI + side * 1.2 * d;
       const pk = t > 10 && k < 0 ? 1 + .08 * Math.abs(Math.sin(t * 4 + i)) : 1; tp.scale.setScalar(pk); bt.scale.setScalar(pk);
     });
     let pass = -1; for (let k = 0; k < 3; k++) if (t > 1 + 3 * k && t < 2.6 + 3 * k) pass = k;
-    copier.visible = pass >= 0; if (pass >= 0) { const u = (t - 1 - 3 * pass) / 1.6; copier.position.set(lerp(-3.3, 3.3, u), 1.35, .25); wobble(copier, t, 1.5); }
+    copier.visible = pass >= 0; if (pass >= 0) { const u = (t - 1 - 3 * pass) / 1.6; copier.position.set(lerp(-2.6, 2.6, u), YT + .85, .25); wobble(copier, t, 1.5); }
     let c = -1; for (let k = 0; k < 3; k++) if (t > 2.6 + 3 * k && t < 4 + 3 * k) c = k;
     cnt.forEach((l, i) => l.visible = i === c && !nm);
     safeL.visible = t > 10 && !nm; glow.visible = t > 10;
-  };
+  }
 
   const draw = (t, ph) => {
-    S.visible = ph === 1 || (ph === 0 && t < 12); L.visible = ph === 2; B.visible = ph === 3 || (ph === 0 && t >= 12);
-    if (ph === 2) lace(t); else if (B.visible) body(ph === 0 ? t - 12 : t); else story(t);
+    const shoe = ph === 1 || ph === 2 || ph === 3;
+    SH.visible = shoe; D.visible = !shoe;
+    if (ph === 1) wearScene(t); else if (ph === 2) keepScene(t); else if (ph === 3) frayScene(t);
+    else if (ph === 4) bridge(t); else if (ph === 5) body(t);
+    else if (t < 9) bridge(t); else body(t - 9);
   };
-  const crayS = ['🔍 크레파스', cray, 2.8, '그릴 때마다 크레파스가 조금씩 짧아져요', null, { loop: [4.0, 6.5], slow: .5 }];
-  const frayS = ['🔍 풀리는 끝', [.3, YB, 0], 2.2, '마개가 없으면 끈 끝이 풀풀 풀려요', [-.7, 1.3], { loop: [1.4, 4.2], slow: .5 }];
-  const capS = ['🔍 마개 끝', [.5, YA, 0], 2.4, '마개가 있으면 구멍에 쏙 들어가요', [-.5, 1.4], { loop: [1.2, 3.4], slow: .5 }];
-  const endS = ['🔍 오른쪽 끝', [X(N - 2), .25, 0], 2.2, '베낄 때마다 끝 마개가 한 칸씩 떨어져요', null, { loop: [5.4, 6.9], slow: .5 }];
-  const midS = ['🔍 안쪽 블록', [0, .25, 0], 3.0, '안쪽의 중요한 블록은 그대로예요', null, { loop: [9.8, 12.8], slow: .5 }];
+  const tipF = () => g.localToWorld(tipNow.clone());
+  const rEnd = [X(N - 2), (YT + YB) / 2, 0];
   draw.spots = {
-    1: [crayS],
-    2: [frayS, capS],
-    3: [endS, midS],
-    0: [crayS, ['🔍 오른쪽 끝', endS[1], 2.2, endS[3], null, { loop: [17.4, 18.9], slow: .5 }]],
+    1: [['🔍 마개 끝', tipF, 2.0, '구멍을 지날 때마다 회색 마개가 한 칸씩 닳아요', [.35, 1.35], { loop: [3.8, 7.2], slow: .5 }]],
+    2: [['🔍 마개 끝', [RX, RY, 0], 2.0, '마개가 있으면 끈 끝이 단단해서 구멍에 쏙!', [.35, 1.35], { loop: [.4, 2.2], slow: .5 }]],
+    3: [['🔍 풀린 끝', [RX - .4, RY, 0], 2.0, '마개가 다 닳으면 끈이 풀풀, 구멍에 안 들어가요', [.35, 1.35], { loop: [1.4, 6.6], slow: .5 }]],
+    4: [['🔍 오른쪽 끝', rEnd, 2.2, '회색 마개가 그 자리에서 회색 마개 블록으로 바뀌어요', null, { loop: [1.6, 6.4], slow: .5 }]],
+    5: [['🔍 오른쪽 끝', rEnd, 2.2, '베낄 때마다 끝 마개 블록이 한 칸씩 떨어져요', null, { loop: [5.4, 6.9], slow: .5 }], ['🔍 안쪽 블록', [0, (YT + YB) / 2, 0], 2.8, '안쪽 색깔 블록은 그대로예요', null, { loop: [9.8, 11.8], slow: .5 }]],
+    0: [['🔍 오른쪽 끝', rEnd, 2.2, '회색 마개 → 회색 마개 블록', null, { loop: [1.6, 6.4], slow: .5 }], ['🔍 안쪽 블록', [0, (YT + YB) / 2, 0], 2.8, '마개가 닳아도 안쪽은 그대로', null, { loop: [17.8, 20.8], slow: .5 }]],
   };
   draw.cam = {
-    2: [[1.0, 1], [3.0, 0], [6.0, -1]],
-    3: [[5.2, 0], [7.2, -1], [10.2, 1], [12.6, -1]],
-    0: [[4.2, 0], [6.8, -1], [17.2, 1], [19.6, -1]],
+    1: [[4.3, 0], [7.4, -1]],
+    2: [[.3, 0], [7.5, -1]],
+    3: [[1.2, 0], [8.6, -1]],
+    4: [[1.8, 0], [7.2, -1]],
+    5: [[5.2, 0], [7.2, -1]],
+    0: [[1.8, 0], [7.2, -1]],
   };
   return draw;
 };
@@ -1397,20 +1653,22 @@ SCENES.k7_caps = (g) => {
 // 7. 글자 실수 (돌연변이) · 7세판
 LESSONS[6] = {
   scene: 'k7_mistake', law: '베껴 쓰다 틀렸어요', title: '꿀이의 짠 쿠키',
-  cam: [0, 1.75, 6.6], tgt: [0, 1.25, 0], fit: 1.3, T: 17,
+  cam: [0, 1.75, 6.6], tgt: [0, 1.25, 0], fit: 1.3, T: 16,
   story: '지난번엔 신발끈 끝 마개가 조금씩 닳았지요? 오늘은 꿀이가 할머니 쿠키 요리법을 베껴 써요.',
   watch: [
     ['꿀이가 할머니 요리법을 베껴 써요. 그런데 설탕 자리에 소금을 썼어요!', 12],
     ['나비가 하나씩 대 보며 확인해요. 다른 걸 찾아서 바꿔요!', 12, '🔍 「비교하는 곳」을 누르면 틀린 걸 찾아 바꾸는 순간이 천천히 되풀이돼요'],
-    ['몸속 DNA도 베껴 쓰다 실수를 해요. 따가운 햇빛도 블록을 망가뜨려요.', 15, '🔍 「불룩한 블록」을 누르면 안 맞는 블록을 빼고 고치는 순간이 되풀이돼요'],
+    ['창가의 할머니 요리법에 따가운 햇빛이 비쳐요. 설탕 그림이 흐려져서 꿀이가 소금으로 잘못 읽었어요. 하늘색 커튼 방패를 치니 햇빛이 톡!', 13, '🔍 「흐려진 글자」를 누르면 햇빛에 설탕 그림이 흐려지는 순간이 되풀이돼요'],
+    ['요리법을 크게 보면… 한 줄 한 줄이 색깔 블록으로 바뀌어요! 소금 줄은 모양이 다른 파란 블록이 돼요.', 10, '🔍 「바뀌는 곳」을 누르면 요리법 줄이 블록으로 바뀌는 순간이 되풀이돼요'],
+    ['몸속 DNA도 베껴 쓰다 블록을 틀려요. 따가운 햇빛도 블록에 상처를 내요. 하늘색 선크림 방패가 막아 줘요!', 15, '🔍 「불룩한 블록」을 누르면 안 맞는 블록을 빼고 고치는 순간이 되풀이돼요'],
   ],
   q: '꿀이 쿠키는 왜 짰을까요?',
   choices: [['🧂', '설탕을 소금으로 써서!'], ['🔥', '오븐이 너무너무 뜨거워서!'], ['🐷', '꿀이가 배가 불러서!']], answer: 0,
   hint: '꿀이가 베낀 요리법을 할머니 것과 하나씩 대 봐요. 세 번째가 달라요!',
-  q2: '선크림을 바르면 왜 좋을까요?',
-  choices2: [['🛡️', '햇빛을 막아 줘서!'], ['🍪', '쿠키가 달아져서!'], ['🎨', '얼굴 색이 예뻐져서!']], answer2: 0,
-  hint2: '방패가 생기자 햇빛이 어떻게 됐나요? 톡 튕겨 나갔지요?',
-  kid: '햇빛을 막아 줘서!',
+  q2: '하늘색 커튼과 하늘색 선크림 방패는 무엇을 했나요?',
+  choices2: [['🛡️', '햇빛을 톡 막았어요!'], ['🍪', '쿠키를 달콤하게 했어요!'], ['🎨', '블록을 색칠했어요!']], answer2: 0,
+  hint2: '하늘색 방패가 생기자 햇빛이 어떻게 됐나요? 톡 튕겨 나갔지요?',
+  kid: '햇빛을 톡 막았어요!',
   name: { kid: '글자 실수', term: '돌연변이', what: 'DNA를 베껴 쓰다 블록 글자가 바뀌는 거예요. 대부분은 몸이 찾아서 고쳐요!' },
   habit: '햇빛이 센 날에는 선크림을 바르고 모자를 써요.',
   adult: '어른용 · 돌연변이(mutation): DNA 중합효소의 교정 기능(3′→5′ 엑소뉴클레이스 proofreading)과 불일치 수선(mismatch repair)이 복제 오류를 대부분 고치지만, 남은 불일치는 다음 복제에서 다른 염기쌍으로 고정된다. 자외선(UVB)은 이웃한 티민 두 개를 공유결합시켜 티민 이량체를 만들어 복제를 방해한다. 이번 비유: 요리법 베끼기 실수 = 복제 오류, 하나씩 대 보는 나비 = 교정·수선, 선크림 = 자외선 차단.',
@@ -1433,7 +1691,11 @@ SCENES.k7_mistake = (g, ctx) => {
   const sugar = () => { const o = new THREE.Group(); o.add(box(.24, .24, .24, '#ffffff'), ball(.05, '#f472b6', .08, .14, .1)); return o; };
   const salt = () => { const o = new THREE.Group(); o.add(cyl(.09, .1, .26, '#cbd5e1'), ball(.1, '#64748b', 0, .15, 0)); return o; };
   const place = (o, x, i) => { o.position.set(x, IY[i], IZ); const w = new THREE.Group(); w.add(o); K.add(w); o.userData.big = 1.35; return o; };
-  [egg(), flour(), sugar()].forEach((o, i) => { place(o, GX, i); o.scale.setScalar(1.35); });
+  const gItems = [egg(), flour(), sugar()]; gItems.forEach((o, i) => { place(o, GX, i); o.scale.setScalar(1.35); });
+  // 줄마다 색깔 표시 (= 몸속 블록 색): 달걀 빨강 · 밀가루 노랑 · 설탕 초록 (소금은 파랑)
+  const TABC = ['#ef4444', '#facc15', '#22c55e'];
+  TABC.forEach((c, i) => K.add(box(.12, .12, .04, c, GX - .48, IY[i], -.26)));
+  const cTabs = TABC.map((c, i) => { const b = box(.12, .12, .04, c, CX - .48, IY[i], -.26); K.add(b); return b; });
   const cEgg = place(egg(), CX, 0), cFlour = place(flour(), CX, 1), cSalt = place(salt(), CX, 2), cSugar = place(sugar(), CX, 2);
   const lSugar = label('설탕', .34), lSalt = label('소금', .34, '#cbd5e1');
   lSugar.position.set(GX, IY[2] - .33, -.05); lSalt.position.set(CX, IY[2] - .33, -.05); K.add(lSugar, lSalt);
@@ -1450,12 +1712,47 @@ SCENES.k7_mistake = (g, ctx) => {
   lDiff.position.set(0, IY[1], .1); K.add(lSalty, lDiff, lSweet);
   const eat = (t, a) => { if (t < a) return; const k = seg(t, a, a + .7); if (k < 1) cookies[0].position.lerpVectors(V(-.18, 0, .05), V(2.3, -.05, .3), k); else cookies[0].visible = false; };
 
+  // ── 햇빛과 하늘색 커튼 방패 (장면 3) ──
+  const kSun = new THREE.Group(); kSun.add(ball(.32, emat('#fde047', .9)));
+  for (let i = 0; i < 8; i++) { const r = mesh(new THREE.ConeGeometry(.07, .22, 8), emat('#facc15', .8), Math.cos(i * Math.PI / 4) * .47, Math.sin(i * Math.PI / 4) * .47, 0); r.rotation.z = i * Math.PI / 4 - Math.PI / 2; kSun.add(r); }
+  const SUNP = V(-3.3, 3.0, .2); kSun.position.copy(SUNP); K.add(kSun);
+  const kRay = ball(.1, emat('#facc15', 1)); K.add(kRay);
+  const curtain = box(.06, 2.0, 1.3, tmat('#7dd3fc', .55), -2.15, 2.0, -.1); K.add(curtain);
+  const lBlur = label('흐려졌어요', .38, '#fde047'), lMis = label('소금인 줄 알았어요', .36, '#fecaca'), lCur = label('커튼 방패!', .42, '#e0f2fe');
+  lBlur.position.set(GX, 2.65, 0); lMis.position.set(CX, 2.65, 0); lCur.position.set(-2.4, 3.2, 0); K.add(lBlur, lMis, lCur);
+  function sunScene(t) {
+    kitchen(0, 'sun');
+    const nm = naming();
+    kSun.visible = true; kSun.scale.setScalar(Math.max(.001, seg(t, 0, .8))); kSun.rotation.z = t * .5;
+    const hitP = V(GX, IY[2], IZ + .1), curP = V(-2.15, 2.6, -.05);
+    kRay.visible = (t > 1 && t < 2.6) || (t > 8.6 && t < 10.4);
+    if (t < 2.6) { const q = seg(t, 1, 2.6); kRay.position.lerpVectors(SUNP, hitP, q); kRay.position.y += .12 * Math.sin(q * 20); }
+    else if (t < 9.6) kRay.position.lerpVectors(SUNP, curP, seg(t, 8.6, 9.6));
+    else kRay.position.lerpVectors(curP, V(-3.8, 3.7, .3), seg(t, 9.6, 10.4));
+    setOpacity(gItems[2], 1 - .82 * seg(t, 2.6, 3.6));
+    lBlur.visible = t > 3 && t < 8 && !nm;
+    // 꿀이가 흐린 글자를 보고 소금으로 베껴요
+    cSugar.visible = false; cEgg.visible = cFlour.visible = true; cEgg.scale.setScalar(1.35); cFlour.scale.setScalar(1.35);
+    pop(cSalt, t, 5.6); cSalt.position.set(CX, IY[2], IZ); lSalt.visible = t > 5.8;
+    const wr = t > 4.4 && t < 5.6; if (wr) pencil.position.set(CX + .12 + .05 * Math.sin(t * 25), IY[2] + .12, -.05); else pencil.position.copy(rest); pencil.rotation.z = wr ? -.45 : -1.4;
+    lMis.visible = t > 5.9 && t < 8.2 && !nm;
+    pig.userData.head.rotation.z = t > 3.8 && t < 5.4 ? .25 * Math.sin(t * 6) : 0;
+    // 나비가 하늘색 커튼을 쳐요
+    cat.visible = true; cat.position.set(-2.9, 0, .6); cat.rotation.y = .4; cat.userData.armR.rotation.z = t > 6.6 && t < 8 ? -2.4 : 0; waddle(cat, t, .1);
+    curtain.visible = t > 6.6; curtain.scale.set(1, 1, Math.max(.001, seg(t, 6.6, 7.8)));
+    lCur.visible = t > 7.6 && !nm;
+    cookieG.visible = false;
+    cTabs[2].material.color.set(t > 5.6 ? '#3b82f6' : '#22c55e');
+  }
+
   function kitchen(t, md) {
-    hideAll(lSalty, lDiff, lSweet, ringG, ringC);
+    hideAll(lSalty, lDiff, lSweet, ringG, ringC, kSun, kRay, curtain, lBlur, lMis, lCur);
+    setOpacity(gItems[2], 1); cookieG.visible = true;
     pig.position.y = 0; pig.userData.head.rotation.set(0, 0, 0); pig.userData.body.rotation.z = 0; pig.userData.armR.rotation.z = 0;
     cookies[0].position.set(-.18, 0, .05); cookies[0].visible = true;
     cEgg.visible = cFlour.visible = true; cEgg.scale.setScalar(1.35); cFlour.scale.setScalar(1.35); cSalt.position.set(CX, IY[2], IZ);
-    if (md === 'copy') {
+    if (md === 'sun') { cat.visible = false; cSugar.visible = false; pencil.position.copy(rest); pencil.rotation.z = -1.4; }
+    else if (md === 'copy') {
       cat.visible = false; cSugar.visible = false;
       pop(cEgg, t, 1.1); pop(cFlour, t, 2.5); pop(cSalt, t, 3.9);
       lSalt.visible = t > 4.0;
@@ -1485,6 +1782,7 @@ SCENES.k7_mistake = (g, ctx) => {
       pencil.position.copy(rest); pencil.rotation.z = -1.4;
     }
     lSugar.visible = true;
+    cTabs[2].material.color.set(cSalt.visible && !cSugar.visible ? '#3b82f6' : '#22c55e');
     const ly = naming() ? 1.55 : 2.1; lSalty.position.set(2.6, ly, .5); lSweet.position.set(2.6, ly, .5);
   }
 
@@ -1552,21 +1850,51 @@ SCENES.k7_mistake = (g, ctx) => {
     }
   }
 
+  // ── 다리: 요리법 한 줄 = 블록 한 칸 (장면 4) ──
+  const BR = new THREE.Group(); g.add(BR);
+  BR.add(floor(10, 4.4, '#fde7c4'));
+  const BY = [2.25, 1.75, 1.25];
+  const bCards = [-1.5, 1.5].map(x => { const c = box(1.15, 1.4, .05, '#fffbeb', x, 1.75, -.3); BR.add(c); return c; });
+  const mk = [egg, flour, sugar, egg, flour, salt].map((f, j) => { const o = f(); o.scale.setScalar(1.25); o.position.set(j < 3 ? -1.5 : 1.5, BY[j % 3], -.2); BR.add(o); return o; });
+  const bTabs = ['#ef4444', '#facc15', '#22c55e', '#ef4444', '#facc15', '#3b82f6'].map((c, j) => { const b = box(.12, .12, .04, c, (j < 3 ? -1.5 : 1.5) - .48, BY[j % 3], -.26); BR.add(b); return b; });
+  const bBlocks = [...'ATGATC'].map((ch, j) => { const c = toyCar(ch, { s: .9 }); BR.add(c); return c; });
+  const rowY = [2.35, 1.0], bx = i => (i - 1) * .75;
+  const lRowG = label('할머니 줄', .32, '#fde047'), lRowC = label('꿀이가 베낀 줄', .32, '#fde047'), lEq = label('요리법 한 줄 = 블록 한 칸', .38, '#fde047'), lOdd = label('다른 블록!', .38, '#fecaca');
+  lRowG.position.set(-1.9, rowY[0] + .55, 0); lRowC.position.set(-1.9, rowY[1] - .75, 0); lEq.position.set(0, 3.3, 0); lOdd.position.set(bx(2) + .9, rowY[1] + .1, .3);
+  BR.add(lRowG, lRowC, lEq, lOdd);
+  const bRings = [0, 1, 2].map(i => { const r = new THREE.Mesh(rg, i === 2 ? rm : gm); r.scale.setScalar(1.3); BR.add(r); return r; });
+  function bridge(t) {
+    const nm = naming(), k = seg(t, 1.6, 4.6);
+    bCards.forEach(c => { setOpacity(c, 1 - k); c.visible = k < .99; });
+    mk.forEach((o, j) => { o.visible = k < .99; setOpacity(o, 1 - k); o.position.set((j < 3 ? -1.5 : 1.5), BY[j % 3], -.2); });
+    bBlocks.forEach((c, j) => {
+      const i = j % 3, from = V(j < 3 ? -1.5 : 1.5, BY[i], -.15), to = V(bx(i), rowY[j < 3 ? 0 : 1], 0);
+      c.visible = k > .01; setOpacity(c, k); c.position.copy(from.lerp(to, k));
+      c.rotation.z = j === 5 && t > 6 ? .18 * Math.sin(t * 9) : 0;
+    });
+    bTabs.forEach((b, j) => { b.visible = k < .99; setOpacity(b, 1 - k); b.scale.setScalar(t > .4 && t < 1.6 ? pulse(t * 2) * 1.4 : 1); });
+    bRings.forEach((r, i) => { r.visible = t > 5.6 + .5 * i; r.position.set(bx(i), (rowY[0] + rowY[1]) / 2, .3); r.scale.set(1.2, 2.4, 1); });
+    lRowG.visible = lRowC.visible = t > 4.4 && !nm; lEq.visible = t > 2 && !nm; lOdd.visible = t > 6.8 && !nm;
+  }
+
   const draw = (t, ph) => {
-    const kit = ph === 1 || ph === 2 || (ph === 0 && t < 6);
-    K.visible = kit; B.visible = !kit;
-    if (ph === 1) kitchen(t, 'copy'); else if (ph === 2) kitchen(t, 'fix'); else if (ph === 3) body(t);
-    else if (t < 6) kitchen(t + 2, 'fix'); else body(t - 6 + 2.2);
+    const kit = ph === 1 || ph === 2 || ph === 3, br = ph === 4 || (ph === 0 && t < 8);
+    K.visible = kit; BR.visible = br; B.visible = !kit && !br;
+    if (ph === 1) kitchen(t, 'copy'); else if (ph === 2) kitchen(t, 'fix'); else if (ph === 3) sunScene(t);
+    else if (ph === 4) bridge(t); else if (ph === 5) body(t);
+    else if (t < 8) bridge(t + .6); else body(t - 8 + 2.2);
   };
   const cmp = ['🔍 비교하는 곳', [0, IY[2], 0], 3.0, '할머니 요리법과 하나씩 대 봐요. 다른 걸 찾아 바꿔요!'];
   const bulge = ['🔍 불룩한 블록', [wx, 1.1 + .25, 0], 3.0, '모양이 안 맞는 블록이 불룩! 빼고 맞는 걸 넣어요'];
   draw.spots = {
     1: [['🔍 베껴 쓰는 곳', [CX, 1.6, 0], 2.6, '꿀이가 한 칸씩 베껴 써요. 세 번째를 봐요!', null, { loop: [3.4, 4.8], slow: .5 }], ['🔍 꿀이 얼굴', pig, 2.6, '앗, 짜요! 소금 쿠키예요', null, { loop: [6.6, 9.6], slow: .5 }]],
     2: [[...cmp, null, { loop: [4.6, 7.8], slow: .5 }], ['🔍 꿀이 얼굴', pig, 2.6, '이번엔 달콤해요!', null, { loop: [8.6, 11.2], slow: .5 }]],
-    3: [[...bulge, null, { loop: [2.6, 5.6], slow: .5 }], ['🔍 햇빛 맞은 곳', [hx, 1.1 - .45, 0], 3.2, '햇빛이 블록 두 개를 찰싹 붙여 버려요', null, { loop: [8.4, 11.0], slow: .5 }]],
-    0: [[...cmp, null, { loop: [2.6, 5.8], slow: .5 }], [...bulge, null, { loop: [6.4, 9.4], slow: .5 }]],
+    3: [['🔍 흐려진 글자', [GX, IY[2], 0], 2.6, '따가운 햇빛에 설탕 그림이 흐려져요', null, { loop: [1.0, 4.2], slow: .5 }], ['🔍 하늘색 커튼', [-2.15, 2.4, 0], 3.0, '하늘색 커튼 방패에 햇빛이 톡 튕겨요', null, { loop: [8.4, 10.6], slow: .5 }]],
+    4: [['🔍 바뀌는 곳', [0, 1.7, 0], 3.6, '요리법 한 줄이 색깔 블록 한 칸으로 바뀌어요', null, { loop: [1.4, 5.0], slow: .5 }], ['🔍 다른 블록', [bx(2), 1.7, 0], 2.6, '소금 줄은 모양이 다른 파란 블록이에요', null, { loop: [5.4, 8.6], slow: .5 }]],
+    5: [[...bulge, null, { loop: [2.6, 5.6], slow: .5 }], ['🔍 햇빛 맞은 곳', [hx, 1.1 - .45, 0], 3.2, '햇빛이 블록 두 개를 찰싹 붙여 버려요', null, { loop: [8.4, 11.0], slow: .5 }], ['🔍 선크림 방패', [0, 1.6, 0], 4.0, '하늘색 선크림 방패가 햇빛을 톡 막아요', null, { loop: [11.4, 13.6], slow: .5 }]],
+    0: [['🔍 바뀌는 곳', [0, 1.7, 0], 3.6, '요리법 한 줄 = 블록 한 칸', null, { loop: [.6, 4.4], slow: .5 }], [...bulge, null, { loop: [8.4, 11.4], slow: .5 }]],
   };
-  draw.cam = { 2: [[4.6, 0], [8.2, -1]], 3: [[2.9, 0], [5.9, -1], [9.0, 1], [11.2, -1]], 0: [[2.6, 0], [5.8, -1], [6.5, 1], [9.6, -1]] };
+  draw.cam = { 2: [[4.6, 0], [8.2, -1]], 3: [[1.6, 0], [5.0, -1], [8.4, 1], [10.8, -1]], 4: [[1.4, 0], [5.0, -1], [6.0, 1], [9.2, -1]], 5: [[2.9, 0], [5.9, -1], [9.0, 1], [11.2, -1]], 0: [[1.0, 0], [4.6, -1], [8.6, 1], [11.6, -1]] };
   return draw;
 };
 
@@ -1767,14 +2095,16 @@ LESSONS[8] = {
   watch: [
     ['우체부 두리가 주소 쪽지를 들고 가요. 문패와 쪽지가 딱 맞는 집을 찾아요!', 17],
     ['쪽지와 문패를 하나씩 대 봐요. 하나라도 다르면 그냥 지나가요.', 14, '🔍 「문패 맞춰 보기」를 누르면 하나씩 대 보는 모습이 천천히 되풀이돼요.'],
-    ['몸속에서도 똑같아요! 가위 친구가 쪽지 블록을 하나씩 맞춰 보고, 문패가 있는 곳에서만 싹둑!', 16],
+    ['딱 맞는 집은 고칠 곳이에요. 우체통에 낡은 테이프가 붙어 있어서, 두리가 회색 가위로 싹둑 잘라요!', 9, '🔍 「싹둑 가위」를 누르면 테이프를 자르는 순간이 천천히 되풀이돼요'],
+    ['쪽지를 크게 보면… 쪽지 모양이 블록으로, 노란 문패는 노란 반짝 문패로 바뀌어요!', 9, '🔍 「바뀌는 곳」을 누르면 쪽지가 블록으로 바뀌는 순간이 되풀이돼요'],
+    ['몸속에서도 똑같아요! 가위 친구가 쪽지 블록을 하나씩 맞춰 보고, 노란 문패 옆 맞는 곳에서만 싹둑!', 16],
   ],
   q: '두리는 어느 집에 편지를 넣었나요?',
   choices: [['📮', '쪽지랑 딱 맞는 집!'], ['🏠', '제일 큰 집에 넣었어요'], ['🚪', '맨 처음 본 집이에요!']], answer: 0,
   hint: '두리는 쪽지와 문패를 하나씩 대 봤어요. 셋 다 O가 나온 집은 어디였나요?',
   q2: '몸속 가위 친구는 어디서 싹둑 했나요?',
-  choices2: [['✂️', '문패 옆 맞는 자리!'], ['🎲', '아무 데나 막 잘라요!'], ['🔚', '제일 끝 블록에서요!']], answer2: 0,
-  hint2: '가위 친구도 두리처럼 문패가 있고, 쪽지 블록이 모두 쏙 맞는 곳을 찾았어요.',
+  choices2: [['✂️', '노란 문패 옆 자리!'], ['🎲', '아무 데나 막 잘라요!'], ['🔚', '제일 끝 블록에서요!']], answer2: 0,
+  hint2: '가위 친구도 두리처럼 노란 문패가 있고, 쪽지 블록이 모두 쏙 맞는 곳을 찾았어요.',
   kid: '쪽지랑 문패가 딱 맞아야 해!',
   name: { kid: '길 찾는 쪽지', term: '길잡이 RNA', what: '가위 친구가 들고 다니는 주소 쪽지예요. 쪽지와 딱 맞고 문패가 있는 곳만 찾아가요.' },
   habit: '편지나 택배를 보낼 때는 주소를 또박또박 바르게 써요.',
@@ -1796,14 +2126,15 @@ SCENES.k7_guide = (g) => {
   tale.add(floor(10, 4.2, '#bbf7d0'), box(10, .02, 1.1, '#f5deb3', 0, .01, .95));
   const sym = (k, c, s = .12) => k === 0 ? mesh(new THREE.ConeGeometry(s * 1.2, s * 2, 3), c) : k === 1 ? ball(s, c) : box(s * 1.6, s * 1.6, s * 1.6, c);
   const plateOf = (syms, col) => { const p = new THREE.Group(); p.add(box(1.05, .4, .06, col)); syms.forEach(([k, c], i) => { const m = sym(k, c); m.position.set((i - 1) * .32, 0, .09); p.add(m); }); return p; };
-  const ADDR = [[0, '#ef4444'], [1, '#3b82f6'], [2, '#22c55e']];
+  // 쪽지 모양·색 = 몸속 쪽지 블록(G 초록 ●, A 빨강 ▼, T 노랑 ▽)과 같게
+  const ADDR = [[1, '#22c55e'], [0, '#ef4444'], [0, '#facc15']];
   const HX = [-2.5, 0, 2.5], HC = ['#fca5a5', '#93c5fd', '#fcd34d'];
   HX.forEach((x, i) => {
     const h = new THREE.Group(); h.add(box(1.5, 1.3, 1.2, HC[i], 0, .65, 0));
     const roof = mesh(new THREE.ConeGeometry(1.2, .8, 4), '#b45309', 0, 1.7, 0); roof.rotation.y = Math.PI / 4;
     h.add(roof, box(.42, .66, .05, '#7c4a2d', 0, .33, .61)); h.position.set(x, 0, -.6); tale.add(h);
   });
-  const plate1 = plateOf([ADDR[0], ADDR[1], [0, '#facc15']], '#fde047'), plate2 = plateOf(ADDR, '#fde047');
+  const plate1 = plateOf([ADDR[0], ADDR[1], [2, '#3b82f6']], '#fde047'), plate2 = plateOf(ADDR, '#fde047');
   plate1.position.set(0, 1.0, .04); plate2.position.set(2.5, 1.0, .04); tale.add(plate1, plate2);
   // 우체통
   const mbox = new THREE.Group(); mbox.add(cyl(.05, .05, .9, '#6b7280', 0, .45, 0), box(.42, .32, .36, '#ef4444', 0, 1.0, 0), box(.26, .03, .02, '#1f2937', 0, 1.06, .19));
@@ -1902,12 +2233,58 @@ SCENES.k7_guide = (g) => {
     bD.visible = tb > 13.6 && tb < 15.6; bD.position.set(cutX, BOTY - .6, .6);
   }
 
-  const bubbles = [tb0, tb1, tb2, bIn, bA, bP, bB, bC, bD];
+  // ═════ 장면 3: 고칠 곳 — 낡은 테이프를 회색 가위로 싹둑 ═════
+  const MB = V(3.45, 1.0, .64);
+  const tapeA = box(.5, .07, .02, '#94a3b8'), tapeB = box(.5, .07, .02, '#94a3b8'); tale.add(tapeA, tapeB);
+  const sc = new THREE.Group(), scA = box(.6, .06, .03, '#64748b'), scB = box(.6, .06, .03, '#64748b'); sc.add(scA, scB, ball(.06, '#a78bfa')); tale.add(sc);
+  const tFlash = ball(.18, emat('#ffffff', 1.5)); tale.add(tFlash);
+  const fOld = bubble('낡은 테이프', '#e5e7eb', .34), fCut = bubble('싹둑!', '#fde047', .44), fIn = bubble('편지 쏙!', '#fde047', .4);
+  [fOld, fCut, fIn].forEach(l => tale.attach(l)); fOld.position.set(3.45, 1.75, .7); fCut.position.set(3.45, 1.75, .7); fIn.position.set(3.0, 2.2, .7);
+  function fixAt(t) {
+    taleAt(12.9); tb2.visible = false; dog.visible = false;
+    const cut = seg(t, 3.2, 3.5), fall = seg(t, 3.5, 4.6);
+    [[tapeA, .55], [tapeB, -.55]].forEach(([m, a], j) => {
+      m.visible = t < 4.8; m.rotation.z = a + (j ? -1 : 1) * 1.2 * fall;
+      m.position.set(MB.x + (j ? .25 : -.25) * fall, MB.y - 1.0 * fall * fall, MB.z + .05 * fall);
+    });
+    const sp = lerp(-.6, 0, seg(t, .8, 2.6)), ang = .5 * (1 - cut) + (t > 3.5 ? .5 * seg(t, 3.6, 4.2) : 0);
+    sc.visible = t > .6 && t < 5.2; sc.position.set(MB.x + .62 + sp * -1 - .62 * seg(t, .8, 2.6), MB.y, MB.z + .12); sc.position.x = lerp(2.6, MB.x + .1, seg(t, .8, 2.6));
+    scA.rotation.z = ang; scB.rotation.z = -ang;
+    const fl = t > 3.4 && t < 3.8 ? Math.sin(Math.PI * (t - 3.4) / .4) : 0; tFlash.visible = fl > 0; tFlash.position.copy(MB).add(V(0, 0, .1)); tFlash.scale.setScalar(.2 + .8 * fl);
+    fOld.visible = t > .4 && t < 3.2; fCut.visible = t > 3.4 && t < 5.2;
+    const lf = seg(t, 5.6, 6.6); letter.visible = t > 5.6 && t < 6.65;
+    letter.position.set(lerp(1.8, 3.45, lf), lerp(.65, 1.06, lf) + .5 * Math.sin(Math.PI * lf), lerp(1.2, .7, lf));
+    fIn.visible = t > 6.6;
+    dog.visible = t > 6.8; dog.position.set(2.5, 0, lerp(-.45, .45, seg(t, 6.8, 7.4))); dog.userData.armR.rotation.z = -1.3 - .4 * Math.sin(t * 8);
+    rabbit.userData.armR.rotation.z = t > .8 && t < 4.4 ? -1.2 : 0;
+  }
+  const hideFix = () => { hideAll(tapeA, tapeB, sc, tFlash, fOld, fCut, fIn); };
+
+  // ═════ 장면 4: 다리 — 쪽지 → 쪽지 블록, 노란 문패 → 노란 반짝 문패 ═════
+  const BRG = new THREE.Group(); g.add(BRG); BRG.scale.setScalar(1.5); BRG.position.y = -1.35;
+  BRG.add(floor(10, 4.2, '#bbf7d0'));
+  const bNote = plateOf(ADDR, '#ffffff'), bPlate = plateOf(ADDR, '#fde047'); bNote.scale.setScalar(1.6); bPlate.scale.setScalar(1.6);
+  bNote.position.set(0, 2.25, 0); bPlate.position.set(0, .95, 0); BRG.add(bNote, bPlate);
+  const bCars = [...'GAT'].map(ch => { const c = toyCar(ch, { s: S }); BRG.add(c); return c; });
+  const bPam = box(GAP * 3 + .1, 1.0, .5, tmat('#fde047', .35), 0, .95, 0); BRG.add(bPam);
+  const bLs = [label('주소 쪽지 → 쪽지 블록', .36, '#fde047'), label('노란 문패 → 노란 반짝 문패', .36, '#fde047')];
+  bLs[0].position.set(0, 3.1, 0); bLs[1].position.set(0, .3, .5); BRG.add(...bLs);
+  function bridgeAt(t) {
+    const k = seg(t, 1.6, 4.8), nm = naming();
+    bNote.visible = bPlate.visible = k < .99; setOpacity(bNote, 1 - k); setOpacity(bPlate, 1 - k);
+    bCars.forEach((c, i) => { c.visible = k > .01; setOpacity(c, k); c.position.set(lerp((i - 1) * .32 * 1.6, (i - 1) * GAP, k), 2.25 + .1 * k, 0); c.scale.setScalar(t > 6 ? pulse(t) : 1); });
+    bPam.visible = k > .01; bPam.material.opacity = .35 * k + (t > 6 ? .2 * Math.sin(t * 8) : 0);
+    bLs[0].visible = t > .6 && !nm; bLs[1].visible = t > 2.4 && !nm;
+  }
+
+  const bubbles = [tb0, tb1, tb2, bIn, bA, bP, bB, bC, bD, fOld, fCut, fIn];
   const draw = (t, ph) => {
-    const showTale = ph === 1 || ph === 2 || (ph === 0 && t < 8);
-    tale.visible = showTale; body.visible = !showTale;
-    if (ph === 1) taleAt(t); else if (ph === 2) taleAt(t + 3); else if (ph === 3) bodyAt(t, t);
-    else if (t < 8) taleAt(t + 9.4); else bodyAt(t - 8 + 9.4, t - 8);
+    const showTale = ph === 1 || ph === 2 || ph === 3, showBr = ph === 4 || (ph === 0 && t < 7);
+    tale.visible = showTale; BRG.visible = showBr; body.visible = !showTale && !showBr;
+    hideFix();
+    if (ph === 1) taleAt(t); else if (ph === 2) taleAt(t + 3); else if (ph === 3) fixAt(t);
+    else if (ph === 4) bridgeAt(t); else if (ph === 5) bodyAt(t, t);
+    else if (t < 7) bridgeAt(t + 1); else bodyAt(t - 7 + 9.4, t - 7 + 1);
     if (naming()) bubbles.forEach(b => b.visible = false);
   };
   const FRONT = [0, 1.25];
@@ -1917,15 +2294,19 @@ SCENES.k7_guide = (g) => {
     2: [['🔍 문패 맞춰 보기', [0, .72, .2], 2.6, '쪽지와 문패를 하나씩 대 봐요', FRONT, { loop: [1.0, 5.2], slow: .5 }],
         ['🔍 딱 맞는 집', [2.5, .72, .2], 2.6, '셋 다 O! 딱 맞는 집이에요', FRONT, { loop: [7.0, 10.6], slow: .5 }],
         ['🔍 편지 쏙', [3.0, 1.0, .4], 3.0, '우체통에 편지가 쏙!', FRONT, { loop: [10.4, 12.8], slow: .5 }]],
-    3: [['🔍 안 맞는 자리', [X(5), TOPY - .1, 0], 2.8, '쪽지 블록 하나가 안 맞아서 톡 튕겨요', FRONT, { loop: [4.3, 8.2], slow: .5 }],
-        ['🔍 싹둑 자리', [X(10) + .2, TOPY - .1, 0], 2.8, '문패도 있고 셋 다 쏙! 그래서 싹둑', FRONT, { loop: [10.5, 14.8], slow: .5 }]],
-    0: [['🔍 문패 맞춰 보기', [2.5, .72, .2], 2.6, '셋 다 O! 딱 맞는 집', FRONT, { loop: [0.4, 4.0], slow: .5 }],
-        ['🔍 싹둑 자리', [X(10) + .2, TOPY - .1, 0], 2.8, '쪽지가 쏙 맞고 문패가 있는 곳에서 싹둑', FRONT, { loop: [8.6, 13.4], slow: .5 }]],
+    3: [['🔍 싹둑 가위', [3.45, 1.0, .6], 2.4, '낡은 테이프를 회색 가위로 싹둑!', FRONT, { loop: [2.4, 4.8], slow: .5 }]],
+    4: [['🔍 바뀌는 곳', [0, 1.05, 0], 3.6, '쪽지 모양이 같은 색 블록으로 바뀌어요', FRONT, { loop: [1.2, 5.2], slow: .5 }]],
+    5: [['🔍 안 맞는 자리', [X(5), TOPY - .1, 0], 2.8, '쪽지 블록 하나가 안 맞아서 톡 튕겨요', FRONT, { loop: [4.3, 8.2], slow: .5 }],
+        ['🔍 싹둑 자리', [X(10) + .2, TOPY - .1, 0], 2.8, '노란 문패도 있고 셋 다 쏙! 그래서 싹둑', FRONT, { loop: [10.5, 14.8], slow: .5 }]],
+    0: [['🔍 바뀌는 곳', [0, 1.05, 0], 3.6, '쪽지 → 쪽지 블록, 노란 문패 → 반짝 문패', FRONT, { loop: [.4, 4.2], slow: .5 }],
+        ['🔍 싹둑 자리', [X(10) + .2, TOPY - .1, 0], 2.8, '쪽지가 쏙 맞고 노란 문패가 있는 곳에서 싹둑', FRONT, { loop: [9.6, 12.4], slow: .5 }]],
   };
   draw.cam = {
     2: [[1.2, 0], [5.4, -1], [7.2, 1], [11.0, 2], [12.9, -1]],
-    3: [[3.9, 0], [8.6, -1], [10.0, 1], [15.2, -1]],
-    0: [[0.6, 0], [4.6, -1], [9.4, 1], [13.6, -1]],
+    3: [[2.0, 0], [7.4, -1]],
+    4: [[1.0, 0], [6.4, -1]],
+    5: [[3.9, 0], [8.6, -1], [10.0, 1], [15.2, -1]],
+    0: [[.6, 0], [5.0, -1], [8.0, 1], [12.0, -1]],
   };
   return draw;
 };
