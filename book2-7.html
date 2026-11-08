@@ -2303,10 +2303,10 @@ $('#rewatchBtn').onclick = () => { wstep = 0; setMode('watch'); renderWatch(); }
 
 // ③ 이름표
 $('#nameBtn').onclick = () => {
-  // name.kid 가 있으면 큰 이름은 아이 말, 정식 이름은 아래 작게 (7세판)
-  const L = LESSONS[cur], term = L.name.kid || L.name.term, jo = L.name.josa || irago(term), formal = L.name.kid ? L.name.term : '';
+  // 큰 이름은 언제나 진짜 과학 이름. name.kid 가 있으면 아래에 작게 '쉬운 말' (7세판)
+  const L = LESSONS[cur], term = L.name.term, jo = L.name.josa || irago(term), formal = L.name.kid || '';
   setMode('name'); startPhase(0);
-  $('#ntext').replaceChildren('이걸 ', Object.assign(document.createElement('span'), { className: 'term', textContent: term }), ` ${jo} 해요!`.replace(' ' + jo, jo), ...(formal ? [Object.assign(document.createElement('span'), { className: 'formal', textContent: '과학 이름 · ' + formal })] : []));
+  $('#ntext').replaceChildren('이걸 ', Object.assign(document.createElement('span'), { className: 'term', textContent: term }), ` ${jo} 해요!`.replace(' ' + jo, jo), ...(formal ? [Object.assign(document.createElement('span'), { className: 'formal', textContent: '쉬운 말로는 · ' + formal })] : []));
   $('#nsub').replaceChildren(L.name.what, ...(L.habit ? [Object.assign(document.createElement('span'), { className: 'habit', textContent: '🏠 생활 습관 · ' + L.habit })] : []));
   $('#adult').textContent = L.adult;
   nameSprite = label(term, .34, '#fde047'); nameSprite.position.set(0, .95, -3.2);
@@ -2314,7 +2314,7 @@ $('#nameBtn').onclick = () => {
   camera.add(nameSprite);
   $('#nnextBtn').textContent = cur === LESSONS.length - 1 ? '처음으로 ▶' : '다음 이야기 ▶';
   $('#nextBtn').classList.add('go');
-  say(`이걸 ${term}${jo} 해요! ${formal ? '과학 이름은 ' + formal + '. ' : ''}${L.name.what} ${L.habit ? '생활 습관. ' + L.habit : ''}`);
+  say(`이걸 ${term}${jo} 해요! ${formal ? '쉬운 말로는 ' + formal + '. ' : ''}${L.name.what} ${L.habit ? '생활 습관. ' + L.habit : ''}`);
 };
 $('#againBtn').onclick = () => { wstep = 0; setMode('watch'); renderWatch(); };
 $('#nnextBtn').onclick = () => show((cur + 1) % LESSONS.length);
@@ -2325,7 +2325,7 @@ $('#nextBtn').onclick = () => show((cur + 1) % LESSONS.length);
 $('#homeBtn').onclick = () => { autoCam = false; endLoop(); home(.6); };
 $('#voiceBtn').onclick = e => {
   voice = !voice; e.currentTarget.setAttribute('aria-pressed', voice);
-  if (voice) { if (mode === 'watch') say(LESSONS[cur].watch[wstep][0]); else if (mode === 'quiz') readQ(); else say(`이걸 ${LESSONS[cur].name.kid || LESSONS[cur].name.term}${LESSONS[cur].name.josa || irago(LESSONS[cur].name.kid || LESSONS[cur].name.term)} 해요! ${LESSONS[cur].name.what}`); }
+  if (voice) { if (mode === 'watch') say(LESSONS[cur].watch[wstep][0]); else if (mode === 'quiz') readQ(); else say(`이걸 ${LESSONS[cur].name.term}${LESSONS[cur].name.josa || irago(LESSONS[cur].name.term)} 해요! ${LESSONS[cur].name.what}`); }
   else window.speechSynthesis?.cancel();
 };
 
